@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#06070A" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Explore the Reyon range — 50CL, 75CL, 1.5L and 19L dispenser water, all purified through advanced reverse osmosis." />
+
+  <title>Products — Reyon</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="products">
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader__logo" viewBox="0 0 80 100" width="60" height="80">
+      <defs>
+        <linearGradient id="loaderG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient>
+        <clipPath id="loaderClip"><path d="M40 4C40 4 6 42 6 65a34 34 0 0 0 68 0C74 42 40 4 40 4Z"/></clipPath>
+      </defs>
+      <path d="M40 4C40 4 6 42 6 65a34 34 0 0 0 68 0C74 42 40 4 40 4Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+      <g clip-path="url(#loaderClip)"><rect class="loader__fill" x="0" y="100" width="80" height="100" fill="url(#loaderG)"/></g>
+    </svg>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="index.html" class="nav__brand magnetic">
+        <span class="nav__logo">
+          <svg viewBox="0 0 32 32" width="28" height="28">
+            <defs><linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs>
+            <path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#logoG)"/>
+            <circle cx="12" cy="20" r="2.4" fill="rgba(255,255,255,.55)"/>
+          </svg>
+        </span>
+        <span class="nav__name">REYON</span>
+      </a>
+      <nav class="nav__menu" id="navMenu" aria-label="Primary">
+        <a href="index.html" class="nav__link" data-cursor="link">Home</a>
+        <a href="about.html" class="nav__link" data-cursor="link">About</a>
+        <a href="products.html" class="nav__link is-active" data-cursor="link">Products</a>
+        <a href="blog.html" class="nav__link" data-cursor="link">Blog</a>
+        <a href="contact.html" class="nav__link" data-cursor="link">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn--primary btn--sm nav__cta magnetic ripple" data-cursor="link">
+        <span>Order Now</span>
+        <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="products-page">
+
+    <section class="page-hero">
+      <div class="page-hero__bg" aria-hidden="true">
+        <div class="hero__mesh"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="container">
+        <span class="eyebrow eyebrow--light reveal" data-reveal>
+          <span class="eyebrow__dot"></span>
+          The Reyon Range
+        </span>
+        <h1 class="page-hero__title reveal" data-reveal data-reveal-delay="100">
+          Hydration in <em>every</em> size.
+        </h1>
+        <p class="page-hero__lede reveal" data-reveal data-reveal-delay="200">
+          From compact 50CL bottles to 19L bulk dispensers — every Reyon product carries the
+          same uncompromising standards of purity, freshness and care.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <article class="product-detail reveal" id="reyon-50cl" data-reveal>
+          <div class="product-detail__media">
+            <svg viewBox="0 0 160 320" preserveAspectRatio="xMidYMid meet">
+              <defs><linearGradient id="pdg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B5F2FA"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs>
+              <path d="M58 50 Q58 35 80 35 Q102 35 102 50 L102 80 Q118 88 122 115 L122 290 Q122 308 102 308 L58 308 Q38 308 38 290 L38 115 Q42 88 58 80 Z" fill="url(#pdg1)" stroke="rgba(255,255,255,.3)"/>
+              <rect x="64" y="20" width="32" height="28" rx="4" fill="#03045E"/>
+              <rect x="44" y="160" width="72" height="80" rx="4" fill="rgba(3,4,94,.85)"/>
+              <text x="80" y="190" text-anchor="middle" font-family="Space Grotesk" font-weight="500" font-size="13" fill="#fff" letter-spacing="2">REYON</text>
+              <line x1="56" y1="200" x2="104" y2="200" stroke="rgba(255,255,255,.3)"/>
+              <text x="80" y="225" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="13" fill="#5DEFFF" letter-spacing="2">50CL</text>
+            </svg>
+          </div>
+          <div class="product-detail__content">
+            <span class="product-detail__index">01 · Personal</span>
+            <h2 class="product-detail__name">Reyon <em>50CL</em></h2>
+            <p class="product-detail__desc">
+              The smallest, most convenient bottle in the range — designed for the moments
+              hydration matters most. School bags. Gym bags. Glove compartments. Long meetings.
+            </p>
+            <div class="product-detail__features">
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Volume</small><strong>500ml</strong></div>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Best for</small><strong>Single-serve, on-the-go</strong></div>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Pack</small><strong>Carton of 24 bottles</strong></div>
+              </div>
+            </div>
+            <div class="hero__cta">
+              <a href="contact.html" class="btn btn--primary btn--lg ripple magnetic" data-cursor="link">
+                <span>Order this size</span>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail reveal" id="reyon-75cl" data-reveal>
+          <div class="product-detail__media">
+            <svg viewBox="0 0 160 320" preserveAspectRatio="xMidYMid meet">
+              <defs><linearGradient id="pdg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B5F2FA"/><stop offset="100%" stop-color="#0077B6"/></linearGradient></defs>
+              <path d="M55 45 Q55 30 80 30 Q105 30 105 45 L105 78 Q123 88 128 115 L128 295 Q128 312 108 312 L52 312 Q32 312 32 295 L32 115 Q37 88 55 78 Z" fill="url(#pdg2)" stroke="rgba(255,255,255,.3)"/>
+              <rect x="62" y="14" width="36" height="32" rx="5" fill="#03045E"/>
+              <rect x="40" y="155" width="80" height="92" rx="5" fill="rgba(3,4,94,.85)"/>
+              <text x="80" y="188" text-anchor="middle" font-family="Space Grotesk" font-weight="500" font-size="14" fill="#fff" letter-spacing="2">REYON</text>
+              <line x1="54" y1="200" x2="106" y2="200" stroke="rgba(255,255,255,.3)"/>
+              <text x="80" y="228" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="14" fill="#5DEFFF" letter-spacing="2">75CL</text>
+            </svg>
+          </div>
+          <div class="product-detail__content">
+            <span class="product-detail__index">02 · Best Seller</span>
+            <h2 class="product-detail__name">Reyon <em>75CL</em></h2>
+            <p class="product-detail__desc">
+              Our most popular size — a refreshing mid-volume bottle ideal for events,
+              workouts, meetings and any occasion where one bottle isn't quite enough but
+              two would be too many.
+            </p>
+            <div class="product-detail__features">
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Volume</small><strong>750ml</strong></div>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Best for</small><strong>Active lifestyle, events</strong></div>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Pack</small><strong>Carton of 12 bottles</strong></div>
+              </div>
+            </div>
+            <div class="hero__cta">
+              <a href="contact.html" class="btn btn--primary btn--lg ripple magnetic" data-cursor="link">
+                <span>Order this size</span>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail reveal" id="reyon-1-5l" data-reveal>
+          <div class="product-detail__media">
+            <svg viewBox="0 0 160 320" preserveAspectRatio="xMidYMid meet">
+              <defs><linearGradient id="pdg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#0077B6"/></linearGradient></defs>
+              <path d="M50 40 Q50 25 80 25 Q110 25 110 40 L110 75 Q130 86 135 115 L135 298 Q135 315 113 315 L47 315 Q25 315 25 298 L25 115 Q30 86 50 75 Z" fill="url(#pdg3)" stroke="rgba(255,255,255,.3)"/>
+              <rect x="60" y="10" width="40" height="34" rx="6" fill="#03045E"/>
+              <rect x="36" y="150" width="88" height="100" rx="6" fill="rgba(3,4,94,.85)"/>
+              <text x="80" y="186" text-anchor="middle" font-family="Space Grotesk" font-weight="500" font-size="15" fill="#fff" letter-spacing="2">REYON</text>
+              <line x1="50" y1="200" x2="110" y2="200" stroke="rgba(255,255,255,.3)"/>
+              <text x="80" y="228" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="14" fill="#5DEFFF" letter-spacing="2">1.5L</text>
+            </svg>
+          </div>
+          <div class="product-detail__content">
+            <span class="product-detail__index">03 · Family</span>
+            <h2 class="product-detail__name">Reyon <em>1.5 Litres</em></h2>
+            <p class="product-detail__desc">
+              The everyday workhorse — sized for the home table, the office desk, and the
+              long road trip. Built for daily, sustained hydration without the constant
+              top-up.
+            </p>
+            <div class="product-detail__features">
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Volume</small><strong>1500ml</strong></div>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Best for</small><strong>Home, office, daily use</strong></div>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Pack</small><strong>Carton of 12 bottles</strong></div>
+              </div>
+            </div>
+            <div class="hero__cta">
+              <a href="contact.html" class="btn btn--primary btn--lg ripple magnetic" data-cursor="link">
+                <span>Order this size</span>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail reveal" id="reyon-19l" data-reveal>
+          <div class="product-detail__media">
+            <svg viewBox="0 0 200 320" preserveAspectRatio="xMidYMid meet">
+              <defs><linearGradient id="pdg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B5F2FA"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs>
+              <path d="M70 28 Q70 18 100 18 Q130 18 130 28 L130 50 Q160 60 165 90 L168 290 Q168 305 150 305 L50 305 Q32 305 32 290 L35 90 Q40 60 70 50 Z" fill="url(#pdg4)" stroke="rgba(255,255,255,.3)"/>
+              <rect x="78" y="6" width="44" height="20" rx="4" fill="#03045E"/>
+              <ellipse cx="100" cy="60" rx="38" ry="10" fill="rgba(255,255,255,.3)"/>
+              <rect x="40" y="150" width="120" height="110" rx="6" fill="rgba(3,4,94,.85)"/>
+              <text x="100" y="188" text-anchor="middle" font-family="Space Grotesk" font-weight="500" font-size="18" fill="#fff" letter-spacing="2">REYON</text>
+              <line x1="60" y1="200" x2="140" y2="200" stroke="rgba(255,255,255,.3)"/>
+              <text x="100" y="232" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#5DEFFF" letter-spacing="2">19L</text>
+              <text x="100" y="250" text-anchor="middle" font-family="Inter" font-size="9" fill="rgba(255,255,255,.55)" letter-spacing="2">DISPENSER</text>
+            </svg>
+          </div>
+          <div class="product-detail__content">
+            <span class="product-detail__index">04 · Bulk</span>
+            <h2 class="product-detail__name">Reyon <em>19 Litres</em></h2>
+            <p class="product-detail__desc">
+              Refillable dispenser water for the spaces where dozens of people drink every day —
+              offices, churches, malls, supermarkets and large family homes. Same purity,
+              built for scale.
+            </p>
+            <div class="product-detail__features">
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Volume</small><strong>19,000ml (19L)</strong></div>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Best for</small><strong>Offices, churches, malls</strong></div>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><small>Format</small><strong>Refillable bottle, dispenser-ready</strong></div>
+              </div>
+            </div>
+            <div class="hero__cta">
+              <a href="contact.html" class="btn btn--primary btn--lg ripple magnetic" data-cursor="link">
+                <span>Request bulk quote</span>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section cta-banner">
+      <div class="container">
+        <div class="cta-banner__inner reveal" data-reveal>
+          <div class="cta-banner__bg" aria-hidden="true"></div>
+          <div class="cta-banner__content">
+            <span class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span>Wholesale &amp; Retail</span>
+            <h2 class="cta-banner__title">Need it at <em>scale</em>?</h2>
+            <p class="cta-banner__lede">Whether you're stocking one office or fifty supermarkets, our team will get you a same-week quote with delivery options across Lagos and Delta.</p>
+            <div class="cta-banner__actions">
+              <a href="contact.html" class="btn btn--primary btn--lg ripple magnetic" data-cursor="link">
+                <span>Request a quote</span>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="tel:+2348141738501" class="btn btn--ghost btn--lg ripple magnetic" data-cursor="link">
+                <span>Call sales</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <svg viewBox="0 0 32 32" width="28" height="28"><defs><linearGradient id="footG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs><path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#footG)"/></svg>
+            <span>REYON</span>
+          </div>
+          <p>Premium drinking water — purified, mineral-balanced, and bottled with care across Nigeria.</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__col"><h5>Pages</h5>
+            <a href="index.html" data-cursor="link">Home</a>
+            <a href="about.html" data-cursor="link">About</a>
+            <a href="products.html" data-cursor="link">Products</a>
+            <a href="blog.html" data-cursor="link">Blog</a>
+            <a href="contact.html" data-cursor="link">Contact</a>
+          </div>
+          <div class="footer__col"><h5>Products</h5>
+            <a href="products.html#reyon-50cl" data-cursor="link">Reyon 50CL</a>
+            <a href="products.html#reyon-75cl" data-cursor="link">Reyon 75CL</a>
+            <a href="products.html#reyon-1-5l" data-cursor="link">Reyon 1.5L</a>
+            <a href="products.html#reyon-19l" data-cursor="link">Reyon 19L</a>
+          </div>
+          <div class="footer__col"><h5>Get in touch</h5>
+            <a href="mailto:enquiry@reyongroup.com" data-cursor="link">enquiry@reyongroup.com</a>
+            <a href="tel:+2348141738501" data-cursor="link">+234 814 173 8501</a>
+            <a href="tel:+2348164869309" data-cursor="link">+234 816 486 9309</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="year">2026</span> Reyon Group. All rights reserved.</p>
+        <p class="footer__credit">Fuel your lifestyle.</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-cursor="link"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor"/></svg></a>
+          <a href="https://facebook.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-cursor="link"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v8h3v-8h2.5l.5-3H14V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top ripple magnetic" id="backToTop" aria-label="Back to top" data-cursor="link">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

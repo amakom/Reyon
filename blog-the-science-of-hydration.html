@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#06070A" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Why the right amount of water — and the right kind — does more for your body than you'd think." />
+
+  <title>The science of staying hydrated — Reyon</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="article">
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader__logo" viewBox="0 0 80 100" width="60" height="80">
+      <defs><linearGradient id="loaderG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient><clipPath id="loaderClip"><path d="M40 4C40 4 6 42 6 65a34 34 0 0 0 68 0C74 42 40 4 40 4Z"/></clipPath></defs>
+      <path d="M40 4C40 4 6 42 6 65a34 34 0 0 0 68 0C74 42 40 4 40 4Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+      <g clip-path="url(#loaderClip)"><rect class="loader__fill" x="0" y="100" width="80" height="100" fill="url(#loaderG)"/></g>
+    </svg>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div></div>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="index.html" class="nav__brand magnetic">
+        <span class="nav__logo">
+          <svg viewBox="0 0 32 32" width="28" height="28"><defs><linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs><path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#logoG)"/><circle cx="12" cy="20" r="2.4" fill="rgba(255,255,255,.55)"/></svg>
+        </span>
+        <span class="nav__name">REYON</span>
+      </a>
+      <nav class="nav__menu" id="navMenu" aria-label="Primary">
+        <a href="index.html" class="nav__link" data-cursor="link">Home</a>
+        <a href="about.html" class="nav__link" data-cursor="link">About</a>
+        <a href="products.html" class="nav__link" data-cursor="link">Products</a>
+        <a href="blog.html" class="nav__link is-active" data-cursor="link">Blog</a>
+        <a href="contact.html" class="nav__link" data-cursor="link">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn--primary btn--sm nav__cta magnetic ripple" data-cursor="link">
+        <span>Order Now</span>
+        <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__bg" aria-hidden="true"><div class="hero__mesh"></div><div class="hero__grid"></div></div>
+      <div class="container">
+        <a href="blog.html" class="eyebrow eyebrow--light reveal" data-reveal data-cursor="link" style="text-decoration:none">
+          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M19 12H5M11 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back to Blog
+        </a>
+        <h1 class="page-hero__title reveal" data-reveal data-reveal-delay="100">
+          The science of staying <em>hydrated</em>.
+        </h1>
+        <div class="article-meta reveal" data-reveal data-reveal-delay="200">
+          <span class="article-meta__cat">Wellness</span>
+          <span>5 min read</span>
+          <span>Reyon Editorial</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="article-cover reveal" data-reveal>
+      <svg viewBox="0 0 1100 550" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="cov1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#001F3F"/><stop offset="100%" stop-color="#0077B6"/></linearGradient>
+          <radialGradient id="cov1g"><stop offset="0%" stop-color="rgba(0,212,245,.5)"/><stop offset="100%" stop-color="rgba(0,212,245,0)"/></radialGradient>
+        </defs>
+        <rect width="1100" height="550" fill="url(#cov1)"/>
+        <circle cx="550" cy="275" r="280" fill="url(#cov1g)"/>
+        <path d="M 550 130 C 660 130, 750 270, 750 380 A 200 200 0 1 1 350 380 C 350 270, 440 130, 550 130 Z" fill="rgba(255,255,255,.8)"/>
+        <ellipse cx="490" cy="280" rx="20" ry="50" fill="#5DEFFF" opacity=".4" transform="rotate(-22 490 280)"/>
+        <circle cx="180" cy="120" r="4" fill="rgba(93,239,255,.6)"/>
+        <circle cx="900" cy="160" r="3" fill="rgba(255,255,255,.5)"/>
+        <circle cx="120" cy="420" r="5" fill="rgba(93,239,255,.4)"/>
+        <circle cx="980" cy="430" r="3" fill="rgba(255,255,255,.4)"/>
+      </svg>
+    </div>
+
+    <article class="article container reveal" data-reveal>
+      <p>Hydration is one of those words you hear so often it loses its weight. We're told to drink more water, sip throughout the day, never wait until we're thirsty. But beneath the wellness clichés sits a remarkably simple truth: <strong>your body is roughly 60% water, and almost every system that keeps you alive runs on it.</strong></p>
+
+      <p>Cells need it to function. Your blood needs it to carry oxygen. Your kidneys need it to filter waste. Your brain needs it to fire signals. When you're under-hydrated, none of those systems stop — they just slow down.</p>
+
+      <h2>How much water do you actually need?</h2>
+      <p>The familiar advice — eight glasses a day — is a useful baseline, but the real answer depends on you. Body size, climate, activity level, diet, and even how much caffeine you drink all shift the equation.</p>
+      <p>A more honest framework: aim for 30–35ml per kilogram of body weight per day, then add more if you're sweating, exercising, or in a hot environment. For most adults in Lagos or Warri, that lands somewhere between 2 and 3 litres of total water intake daily — including what's in your food.</p>
+
+      <h2>Signs you're already behind</h2>
+      <p>By the time you feel thirsty, you're already mildly dehydrated. The earlier signals are quieter — and easy to miss:</p>
+      <ul>
+        <li>Light fatigue, especially mid-afternoon</li>
+        <li>Difficulty concentrating</li>
+        <li>Mild headache or "brain fog"</li>
+        <li>Dry lips or mouth</li>
+        <li>Darker urine</li>
+      </ul>
+      <p>None of these are dramatic on their own. Stacked together over a long day, they're the difference between feeling sharp and feeling vaguely off.</p>
+
+      <blockquote>
+        Hydration isn't about chasing some perfect number. It's about giving your body what it quietly asks for, before it has to ask loudly.
+      </blockquote>
+
+      <h2>Why the kind of water matters</h2>
+      <p>Water that's been over-mineralized, contaminated, or carrying chlorine compounds doesn't hydrate the same way clean, balanced water does. The body still uses it, but it has to work harder — and you absorb less of it.</p>
+      <p>This is why <a href="about.html#process">the Reyon process</a> is built around three stages: carbon filtration to clear the path, reverse osmosis to strip what shouldn't be there, and UV/ozone disinfection to ensure the final water is safe down to the microscopic level.</p>
+
+      <h2>Small habits, big difference</h2>
+      <p>The simplest hydration strategy is the one you'll actually keep. A few habits that consistently work:</p>
+      <ol>
+        <li>Drink a full glass of water within 30 minutes of waking.</li>
+        <li>Keep a bottle within arm's reach all day. (A 75CL or 1.5L is ideal.)</li>
+        <li>Drink before meals, not just during them.</li>
+        <li>Match every cup of coffee or tea with a glass of water.</li>
+        <li>Track your urine colour — pale yellow is the goal.</li>
+      </ol>
+
+      <hr />
+
+      <p><strong>The bottom line:</strong> hydration is one of the smallest daily inputs with the largest downstream impact on how you feel, focus and perform. The water itself just has to be clean, balanced, and within reach. We make ours that way on purpose.</p>
+    </article>
+
+    <section class="related">
+      <div class="container">
+        <div class="section__head section__head--row">
+          <h2 class="section__title">Keep <em>reading</em>.</h2>
+          <a href="blog.html" class="btn btn--ghost ripple magnetic" data-cursor="link"><span>All articles</span></a>
+        </div>
+        <div class="blog__grid">
+          <a href="blog-our-purification-process.html" class="blog-card" data-cursor="view">
+            <div class="blog-card__media">
+              <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="r1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#03045E"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs><rect width="600" height="360" fill="url(#r1)"/><circle cx="180" cy="180" r="50" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/><circle cx="180" cy="180" r="30" fill="rgba(93,239,255,.4)"/><circle cx="300" cy="180" r="50" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/><circle cx="300" cy="180" r="30" fill="rgba(0,212,245,.4)"/><circle cx="420" cy="180" r="50" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/><circle cx="420" cy="180" r="30" fill="rgba(255,255,255,.4)"/></svg>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta"><span class="blog-card__cat">Process</span><span>4 min read</span></div>
+              <h3 class="blog-card__title">Inside our purification process</h3>
+              <p class="blog-card__excerpt">From carbon filtration to ozone disinfection — exactly how raw water becomes Reyon-grade.</p>
+              <span class="blog-card__more">Read article<svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+          <a href="blog-choosing-your-water-format.html" class="blog-card" data-cursor="view">
+            <div class="blog-card__media">
+              <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="r2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#001F3F"/><stop offset="100%" stop-color="#5DEFFF"/></linearGradient></defs><rect width="600" height="360" fill="url(#r2)"/><g opacity="0.85"><rect x="180" y="120" width="40" height="160" rx="8" fill="rgba(255,255,255,.35)"/><rect x="245" y="100" width="50" height="180" rx="10" fill="rgba(255,255,255,.45)"/><rect x="320" y="80" width="60" height="200" rx="12" fill="rgba(255,255,255,.55)"/><rect x="405" y="60" width="80" height="220" rx="14" fill="rgba(255,255,255,.7)"/></g></svg>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta"><span class="blog-card__cat">Guide</span><span>3 min read</span></div>
+              <h3 class="blog-card__title">Choosing your Reyon format</h3>
+              <p class="blog-card__excerpt">50CL, 75CL, 1.5L or 19L? A simple guide to picking the right size for the right moment.</p>
+              <span class="blog-card__more">Read article<svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <svg viewBox="0 0 32 32" width="28" height="28"><defs><linearGradient id="footG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs><path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#footG)"/></svg>
+            <span>REYON</span>
+          </div>
+          <p>Premium drinking water — purified, mineral-balanced, and bottled with care across Nigeria.</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__col"><h5>Pages</h5><a href="index.html" data-cursor="link">Home</a><a href="about.html" data-cursor="link">About</a><a href="products.html" data-cursor="link">Products</a><a href="blog.html" data-cursor="link">Blog</a><a href="contact.html" data-cursor="link">Contact</a></div>
+          <div class="footer__col"><h5>Products</h5><a href="products.html#reyon-50cl" data-cursor="link">Reyon 50CL</a><a href="products.html#reyon-75cl" data-cursor="link">Reyon 75CL</a><a href="products.html#reyon-1-5l" data-cursor="link">Reyon 1.5L</a><a href="products.html#reyon-19l" data-cursor="link">Reyon 19L</a></div>
+          <div class="footer__col"><h5>Get in touch</h5><a href="mailto:enquiry@reyongroup.com" data-cursor="link">enquiry@reyongroup.com</a><a href="tel:+2348141738501" data-cursor="link">+234 814 173 8501</a><a href="tel:+2348164869309" data-cursor="link">+234 816 486 9309</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="year">2026</span> Reyon Group. All rights reserved.</p>
+        <p class="footer__credit">Fuel your lifestyle.</p>
+        <div class="footer__social"><a href="https://instagram.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor"/></svg></a><a href="https://facebook.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v8h3v-8h2.5l.5-3H14V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg></a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top ripple magnetic" id="backToTop" aria-label="Back to top" data-cursor="link">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

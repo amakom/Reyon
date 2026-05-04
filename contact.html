@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#06070A" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Get in touch with Reyon Group — place an order, request a wholesale quote, or visit our Lagos and Warri locations." />
+
+  <title>Contact — Reyon</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="contact">
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader__logo" viewBox="0 0 80 100" width="60" height="80">
+      <defs>
+        <linearGradient id="loaderG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient>
+        <clipPath id="loaderClip"><path d="M40 4C40 4 6 42 6 65a34 34 0 0 0 68 0C74 42 40 4 40 4Z"/></clipPath>
+      </defs>
+      <path d="M40 4C40 4 6 42 6 65a34 34 0 0 0 68 0C74 42 40 4 40 4Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+      <g clip-path="url(#loaderClip)"><rect class="loader__fill" x="0" y="100" width="80" height="100" fill="url(#loaderG)"/></g>
+    </svg>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="index.html" class="nav__brand magnetic">
+        <span class="nav__logo">
+          <svg viewBox="0 0 32 32" width="28" height="28">
+            <defs><linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs>
+            <path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#logoG)"/>
+            <circle cx="12" cy="20" r="2.4" fill="rgba(255,255,255,.55)"/>
+          </svg>
+        </span>
+        <span class="nav__name">REYON</span>
+      </a>
+      <nav class="nav__menu" id="navMenu" aria-label="Primary">
+        <a href="index.html" class="nav__link" data-cursor="link">Home</a>
+        <a href="about.html" class="nav__link" data-cursor="link">About</a>
+        <a href="products.html" class="nav__link" data-cursor="link">Products</a>
+        <a href="blog.html" class="nav__link" data-cursor="link">Blog</a>
+        <a href="contact.html" class="nav__link is-active" data-cursor="link">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn--primary btn--sm nav__cta magnetic ripple" data-cursor="link">
+        <span>Order Now</span>
+        <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__bg" aria-hidden="true">
+        <div class="hero__mesh"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="container">
+        <span class="eyebrow eyebrow--light reveal" data-reveal>
+          <span class="eyebrow__dot"></span>
+          Get In Touch
+        </span>
+        <h1 class="page-hero__title reveal" data-reveal data-reveal-delay="100">
+          Let's <em>talk</em> water.
+        </h1>
+        <p class="page-hero__lede reveal" data-reveal data-reveal-delay="200">
+          Place an order, request a quote, or simply ask us anything. Our team responds within 24 hours.
+        </p>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__intro">
+          <span class="eyebrow reveal" data-reveal>
+            <span class="eyebrow__dot"></span>
+            Reach Us
+          </span>
+          <h2 class="section__title reveal" data-reveal>
+            Multiple ways to <em>connect</em>.
+          </h2>
+          <p class="contact__text reveal" data-reveal data-reveal-delay="150">
+            Whether you're stocking your office, planning an event, or exploring a wholesale
+            partnership — every channel below goes straight to a real person on our team.
+          </p>
+
+          <div class="contact__info">
+            <a href="mailto:enquiry@reyongroup.com" class="contact__chip reveal magnetic" data-reveal data-reveal-delay="200" data-cursor="link">
+              <span class="contact__chip-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 6h16v12H4z M4 6l8 7 8-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <div>
+                <small>Email us</small>
+                <strong>enquiry@reyongroup.com</strong>
+              </div>
+            </a>
+            <a href="tel:+2348141738501" class="contact__chip reveal magnetic" data-reveal data-reveal-delay="300" data-cursor="link">
+              <span class="contact__chip-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <div>
+                <small>Call Lagos</small>
+                <strong>+234 814 173 8501</strong>
+              </div>
+            </a>
+            <a href="tel:+2348164869309" class="contact__chip reveal magnetic" data-reveal data-reveal-delay="400" data-cursor="link">
+              <span class="contact__chip-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <div>
+                <small>Call Warri</small>
+                <strong>+234 816 486 9309</strong>
+              </div>
+            </a>
+          </div>
+
+          <div class="contact-page__hours reveal" data-reveal data-reveal-delay="500">
+            <div class="hour-row"><small>Mon — Fri</small><strong>8:00 — 18:00</strong></div>
+            <div class="hour-row"><small>Saturday</small><strong>9:00 — 16:00</strong></div>
+            <div class="hour-row"><small>Sunday</small><strong>Closed</strong></div>
+          </div>
+
+          <div class="contact__social reveal" data-reveal data-reveal-delay="600">
+            <a href="https://instagram.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link ripple" data-cursor="link">
+              <svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </a>
+            <a href="https://facebook.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link ripple" data-cursor="link">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v8h3v-8h2.5l.5-3H14V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg>
+            </a>
+            <a href="https://instagram.com/reyontablewater" target="_blank" rel="noopener noreferrer" aria-label="Instagram (Table Water)" class="social-link ripple" data-cursor="link">
+              <svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact__form reveal" data-reveal data-reveal-delay="200" id="contactForm" novalidate>
+          <div class="field">
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder=" " />
+            <label for="name">Your name</label>
+            <span class="field__line"></span>
+          </div>
+          <div class="field">
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder=" " />
+            <label for="email">Email address</label>
+            <span class="field__line"></span>
+          </div>
+          <div class="field">
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder=" " />
+            <label for="phone">Phone (optional)</label>
+            <span class="field__line"></span>
+          </div>
+          <div class="field">
+            <select id="topic" name="topic" required>
+              <option value="" disabled selected hidden></option>
+              <option value="wholesale">Wholesale order</option>
+              <option value="retail">Retail purchase</option>
+              <option value="dispenser">19L dispenser refill</option>
+              <option value="general">General enquiry</option>
+            </select>
+            <label for="topic">What can we help with?</label>
+            <span class="field__line"></span>
+          </div>
+          <div class="field field--ta">
+            <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+            <label for="message">Tell us a little more</label>
+            <span class="field__line"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg ripple magnetic contact__submit" data-cursor="link">
+            <span>Send message</span>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="contact__success" id="contactSuccess" hidden>Thanks — we'll be in touch within 24 hours.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section locations" id="locations">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-reveal>
+            <span class="eyebrow__dot"></span>
+            Visit Us
+          </span>
+          <h2 class="section__title reveal" data-reveal>
+            Two locations. <em>One</em> standard.
+          </h2>
+        </div>
+        <div class="locations__grid">
+          <article class="location reveal" data-reveal>
+            <div class="location__marker">
+              <div class="location__pulse"></div>
+              <div class="location__pulse"></div>
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="3" fill="currentColor"/></svg>
+            </div>
+            <div class="location__head">
+              <h3>Lagos</h3>
+              <span class="location__badge">Headquarters</span>
+            </div>
+            <p class="location__address">Golf Road, off Lekki-Epe Expressway, Lakowe, Lagos State, Nigeria.</p>
+            <div class="location__contact">
+              <a href="tel:+2348141738501" class="location__row" data-cursor="link">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                +234 814 173 8501
+              </a>
+              <a href="tel:+2348153294453" class="location__row" data-cursor="link">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                +234 815 329 4453
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Golf+Road+Lakowe+Lagos" target="_blank" rel="noopener noreferrer" class="location__btn ripple magnetic" data-cursor="link">
+                Get Directions
+                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="location reveal" data-reveal data-reveal-delay="200">
+            <div class="location__marker">
+              <div class="location__pulse"></div>
+              <div class="location__pulse"></div>
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="3" fill="currentColor"/></svg>
+            </div>
+            <div class="location__head">
+              <h3>Warri</h3>
+              <span class="location__badge">Plant</span>
+            </div>
+            <p class="location__address">Temile Street, By NPA New Port, Warri, Delta State, Nigeria.</p>
+            <div class="location__contact">
+              <a href="tel:+2348164869309" class="location__row" data-cursor="link">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                +234 816 486 9309
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Temile+Street+New+Port+Warri" target="_blank" rel="noopener noreferrer" class="location__btn ripple magnetic" data-cursor="link">
+                Get Directions
+                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <svg viewBox="0 0 32 32" width="28" height="28"><defs><linearGradient id="footG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs><path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#footG)"/></svg>
+            <span>REYON</span>
+          </div>
+          <p>Premium drinking water — purified, mineral-balanced, and bottled with care across Nigeria.</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__col"><h5>Pages</h5>
+            <a href="index.html" data-cursor="link">Home</a>
+            <a href="about.html" data-cursor="link">About</a>
+            <a href="products.html" data-cursor="link">Products</a>
+            <a href="blog.html" data-cursor="link">Blog</a>
+            <a href="contact.html" data-cursor="link">Contact</a>
+          </div>
+          <div class="footer__col"><h5>Products</h5>
+            <a href="products.html#reyon-50cl" data-cursor="link">Reyon 50CL</a>
+            <a href="products.html#reyon-75cl" data-cursor="link">Reyon 75CL</a>
+            <a href="products.html#reyon-1-5l" data-cursor="link">Reyon 1.5L</a>
+            <a href="products.html#reyon-19l" data-cursor="link">Reyon 19L</a>
+          </div>
+          <div class="footer__col"><h5>Get in touch</h5>
+            <a href="mailto:enquiry@reyongroup.com" data-cursor="link">enquiry@reyongroup.com</a>
+            <a href="tel:+2348141738501" data-cursor="link">+234 814 173 8501</a>
+            <a href="tel:+2348164869309" data-cursor="link">+234 816 486 9309</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="year">2026</span> Reyon Group. All rights reserved.</p>
+        <p class="footer__credit">Fuel your lifestyle.</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-cursor="link"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor"/></svg></a>
+          <a href="https://facebook.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-cursor="link"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v8h3v-8h2.5l.5-3H14V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top ripple magnetic" id="backToTop" aria-label="Back to top" data-cursor="link">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

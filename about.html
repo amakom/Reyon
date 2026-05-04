@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#06070A" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="About Reyon Group — our story, mission, vision, and the three-stage purification process behind every bottle." />
+
+  <title>About — Reyon</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="about">
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader__logo" viewBox="0 0 80 100" width="60" height="80">
+      <defs>
+        <linearGradient id="loaderG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient>
+        <clipPath id="loaderClip"><path d="M40 4C40 4 6 42 6 65a34 34 0 0 0 68 0C74 42 40 4 40 4Z"/></clipPath>
+      </defs>
+      <path d="M40 4C40 4 6 42 6 65a34 34 0 0 0 68 0C74 42 40 4 40 4Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+      <g clip-path="url(#loaderClip)"><rect class="loader__fill" x="0" y="100" width="80" height="100" fill="url(#loaderG)"/></g>
+    </svg>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="index.html" class="nav__brand magnetic" aria-label="Reyon home">
+        <span class="nav__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28">
+            <defs><linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs>
+            <path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#logoG)"/>
+            <circle cx="12" cy="20" r="2.4" fill="rgba(255,255,255,.55)"/>
+          </svg>
+        </span>
+        <span class="nav__name">REYON</span>
+      </a>
+      <nav class="nav__menu" id="navMenu" aria-label="Primary">
+        <a href="index.html" class="nav__link" data-cursor="link">Home</a>
+        <a href="about.html" class="nav__link is-active" data-cursor="link">About</a>
+        <a href="products.html" class="nav__link" data-cursor="link">Products</a>
+        <a href="blog.html" class="nav__link" data-cursor="link">Blog</a>
+        <a href="contact.html" class="nav__link" data-cursor="link">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn--primary btn--sm nav__cta magnetic ripple" data-cursor="link">
+        <span>Order Now</span>
+        <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="page-hero__bg" aria-hidden="true">
+        <div class="hero__mesh"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="container">
+        <span class="eyebrow eyebrow--light reveal" data-reveal>
+          <span class="eyebrow__dot"></span>
+          About Reyon
+        </span>
+        <h1 class="page-hero__title reveal" data-reveal data-reveal-delay="100">
+          Crafting <em>premium</em> water,<br />one drop at a time.
+        </h1>
+        <p class="page-hero__lede reveal" data-reveal data-reveal-delay="200">
+          Reyon exists to bring clean, healthy drinking water to humanity. Through advanced
+          reverse osmosis technology and uncompromising quality control, we craft water that's
+          pure in source, purposeful in design, and powerful in what it adds to your day.
+        </p>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="section story">
+      <div class="container story__inner">
+        <div class="story__media reveal" data-reveal>
+          <div class="story__visual">
+            <svg viewBox="0 0 500 600" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="storyBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#001F3F"/><stop offset="100%" stop-color="#03045E"/>
+                </linearGradient>
+                <radialGradient id="storyGlow" cx="0.5" cy="0.4" r="0.5">
+                  <stop offset="0%" stop-color="rgba(0,212,245,.5)"/>
+                  <stop offset="100%" stop-color="rgba(0,212,245,0)"/>
+                </radialGradient>
+              </defs>
+              <rect width="500" height="600" fill="url(#storyBg)"/>
+              <circle cx="250" cy="280" r="230" fill="url(#storyGlow)"/>
+              <!-- Concentric rings -->
+              <circle cx="250" cy="280" r="60" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+              <circle cx="250" cy="280" r="100" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+              <circle cx="250" cy="280" r="150" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+              <circle cx="250" cy="280" r="200" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+              <!-- Central drop -->
+              <path d="M250 200 C 290 200, 320 250, 320 290 A 70 70 0 1 1 180 290 C 180 250, 210 200, 250 200 Z" fill="rgba(255,255,255,.92)"/>
+              <ellipse cx="225" cy="265" rx="10" ry="22" fill="#5DEFFF" opacity=".4"/>
+              <!-- Floating drops -->
+              <circle cx="100" cy="120" r="4" fill="#5DEFFF"/>
+              <circle cx="400" cy="160" r="6" fill="#B5F2FA"/>
+              <circle cx="80" cy="450" r="5" fill="#00D4F5"/>
+              <circle cx="420" cy="480" r="4" fill="#5DEFFF"/>
+            </svg>
+          </div>
+        </div>
+        <div class="story__content">
+          <span class="eyebrow reveal" data-reveal>
+            <span class="eyebrow__dot"></span>
+            Our Story
+          </span>
+          <h2 class="section__title reveal" data-reveal>
+            Built on a simple, <em>uncompromising</em> idea.
+          </h2>
+          <p class="reveal" data-reveal data-reveal-delay="100">
+            Water touches every part of how we live — how we feel, perform, recover, and show up.
+            We started Reyon because we believed Nigeria deserved a water brand that took that
+            responsibility seriously: from source to sip.
+          </p>
+          <p class="reveal" data-reveal data-reveal-delay="200">
+            Today, our state-of-the-art facilities in Lagos and Warri produce premium drinking water
+            that meets — and often exceeds — international purity standards. Every bottle is
+            laboratory-tested. Every batch is verified. Every detail is by design.
+          </p>
+          <div class="story__pillars">
+            <article class="pillar reveal" data-reveal data-reveal-delay="100">
+              <span class="pillar__num">01</span>
+              <h3>Mission</h3>
+              <p>To produce and bring clean, premium healthy drinking water to humanity.</p>
+            </article>
+            <article class="pillar reveal" data-reveal data-reveal-delay="200">
+              <span class="pillar__num">02</span>
+              <h3>Vision</h3>
+              <p>To improve lives through high quality drinking water — accessible to all, with uncompromising quality.</p>
+            </article>
+            <article class="pillar reveal" data-reveal data-reveal-delay="300">
+              <span class="pillar__num">03</span>
+              <h3>Promise</h3>
+              <p>Every drop laboratory-tested. Every bottle a guarantee of purity, freshness and care.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section process" id="process">
+      <div class="process__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-reveal>
+            <span class="eyebrow__dot"></span>
+            How We Refine
+          </span>
+          <h2 class="section__title reveal" data-reveal>
+            Three stages. <em>Zero</em> compromise.
+          </h2>
+          <p class="section__lede reveal" data-reveal data-reveal-delay="150">
+            Every drop passes through a meticulously engineered purification chain
+            before it ever reaches your bottle.
+          </p>
+        </div>
+
+        <div class="process__timeline" id="processTimeline">
+          <div class="process__rail"><span class="process__rail-fill" id="processRailFill"></span></div>
+
+          <article class="step reveal" data-reveal>
+            <div class="step__node">
+              <span class="step__num">01</span>
+              <div class="step__icon">
+                <svg viewBox="0 0 48 48" width="32" height="32"><rect x="14" y="6" width="20" height="36" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="20" cy="14" r="1.4" fill="currentColor"/><circle cx="28" cy="18" r="1.4" fill="currentColor"/><circle cx="22" cy="24" r="1.4" fill="currentColor"/><circle cx="28" cy="30" r="1.4" fill="currentColor"/><circle cx="20" cy="36" r="1.4" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="step__content">
+              <h3>Carbon Filtration</h3>
+              <p>Activated carbon filters strip impurities, chlorine and organic compounds — preserving the water's natural integrity. This first stage clears the path for everything that follows.</p>
+            </div>
+          </article>
+
+          <article class="step reveal" data-reveal data-reveal-delay="200">
+            <div class="step__node">
+              <span class="step__num">02</span>
+              <div class="step__icon">
+                <svg viewBox="0 0 48 48" width="32" height="32"><circle cx="24" cy="24" r="14" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="step__content">
+              <h3>Demineralization</h3>
+              <p>Reverse osmosis technology removes dissolved minerals and contaminants at the molecular level for unmatched clarity. This is where Reyon's signature crispness is engineered.</p>
+            </div>
+          </article>
+
+          <article class="step reveal" data-reveal data-reveal-delay="400">
+            <div class="step__node">
+              <span class="step__num">03</span>
+              <div class="step__icon">
+                <svg viewBox="0 0 48 48" width="32" height="32"><circle cx="24" cy="24" r="6" fill="currentColor"/><path d="M24 8v4M24 36v4M8 24h4M36 24h4M12 12l3 3M33 33l3 3M12 36l3-3M33 15l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="step__content">
+              <h3>UV &amp; Ozone Disinfection</h3>
+              <p>Ultraviolet light and ozone gas eliminate microorganisms — leaving water that's safe, sterile and ready to drink. The final guarantee before sealing.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations -->
+    <section class="section locations" id="locations">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-reveal>
+            <span class="eyebrow__dot"></span>
+            Where We Operate
+          </span>
+          <h2 class="section__title reveal" data-reveal>
+            Two locations. <em>One</em> standard.
+          </h2>
+        </div>
+        <div class="locations__grid">
+          <article class="location reveal" data-reveal>
+            <div class="location__marker">
+              <div class="location__pulse"></div>
+              <div class="location__pulse"></div>
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="3" fill="currentColor"/></svg>
+            </div>
+            <div class="location__head">
+              <h3>Lagos</h3>
+              <span class="location__badge">Headquarters</span>
+            </div>
+            <p class="location__address">Golf Road, off Lekki-Epe Expressway, Lakowe, Lagos State, Nigeria.</p>
+            <div class="location__contact">
+              <a href="tel:+2348141738501" class="location__row" data-cursor="link">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                +234 814 173 8501
+              </a>
+              <a href="tel:+2348153294453" class="location__row" data-cursor="link">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                +234 815 329 4453
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Golf+Road+Lakowe+Lagos" target="_blank" rel="noopener noreferrer" class="location__btn ripple magnetic" data-cursor="link">
+                Get Directions
+                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="location reveal" data-reveal data-reveal-delay="200">
+            <div class="location__marker">
+              <div class="location__pulse"></div>
+              <div class="location__pulse"></div>
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="3" fill="currentColor"/></svg>
+            </div>
+            <div class="location__head">
+              <h3>Warri</h3>
+              <span class="location__badge">Plant</span>
+            </div>
+            <p class="location__address">Temile Street, By NPA New Port, Warri, Delta State, Nigeria.</p>
+            <div class="location__contact">
+              <a href="tel:+2348164869309" class="location__row" data-cursor="link">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                +234 816 486 9309
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Temile+Street+New+Port+Warri" target="_blank" rel="noopener noreferrer" class="location__btn ripple magnetic" data-cursor="link">
+                Get Directions
+                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-banner">
+      <div class="container">
+        <div class="cta-banner__inner reveal" data-reveal>
+          <div class="cta-banner__bg" aria-hidden="true"></div>
+          <div class="cta-banner__content">
+            <span class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span>Ready to Order</span>
+            <h2 class="cta-banner__title">Refine your hydration with <em>Reyon</em>.</h2>
+            <p class="cta-banner__lede">Place an order, request a quote, or simply ask us a question. We'll respond within 24 hours.</p>
+            <div class="cta-banner__actions">
+              <a href="contact.html" class="btn btn--primary btn--lg ripple magnetic" data-cursor="link">
+                <span>Get in touch</span>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="products.html" class="btn btn--ghost btn--lg ripple magnetic" data-cursor="link">
+                <span>See all products</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+              <defs><linearGradient id="footG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs>
+              <path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#footG)"/>
+            </svg>
+            <span>REYON</span>
+          </div>
+          <p>Premium drinking water — purified, mineral-balanced, and bottled with care across Nigeria.</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__col">
+            <h5>Pages</h5>
+            <a href="index.html" data-cursor="link">Home</a>
+            <a href="about.html" data-cursor="link">About</a>
+            <a href="products.html" data-cursor="link">Products</a>
+            <a href="blog.html" data-cursor="link">Blog</a>
+            <a href="contact.html" data-cursor="link">Contact</a>
+          </div>
+          <div class="footer__col">
+            <h5>Products</h5>
+            <a href="products.html#reyon-50cl" data-cursor="link">Reyon 50CL</a>
+            <a href="products.html#reyon-75cl" data-cursor="link">Reyon 75CL</a>
+            <a href="products.html#reyon-1-5l" data-cursor="link">Reyon 1.5L</a>
+            <a href="products.html#reyon-19l" data-cursor="link">Reyon 19L</a>
+          </div>
+          <div class="footer__col">
+            <h5>Get in touch</h5>
+            <a href="mailto:enquiry@reyongroup.com" data-cursor="link">enquiry@reyongroup.com</a>
+            <a href="tel:+2348141738501" data-cursor="link">+234 814 173 8501</a>
+            <a href="tel:+2348164869309" data-cursor="link">+234 816 486 9309</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="year">2026</span> Reyon Group. All rights reserved.</p>
+        <p class="footer__credit">Fuel your lifestyle.</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-cursor="link"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor"/></svg></a>
+          <a href="https://facebook.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-cursor="link"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v8h3v-8h2.5l.5-3H14V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top ripple magnetic" id="backToTop" aria-label="Back to top" data-cursor="link">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
