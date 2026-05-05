@@ -2604,6 +2604,327 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
   }
 }
 
+/* ===== PRODUCTS — 4 glass cards ===== */
+.products-glass {
+  background: var(--ink);
+  position: relative;
+  padding: clamp(var(--space-64), 9vw, var(--space-128)) 0;
+}
+.products-glass::before {
+  content: "";
+  position: absolute;
+  top: 10%; right: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(79, 184, 224, 0.16), transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+.products-glass__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-24);
+  position: relative;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-3);
+  overflow: hidden;
+  isolation: isolate;
+  text-decoration: none;
+  transition:
+    transform 420ms var(--ease-out),
+    border-color 420ms var(--ease-out),
+    box-shadow 420ms var(--ease-out);
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(127, 216, 245, 0.38);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    0 28px 70px -22px rgba(127, 216, 245, 0.4);
+}
+
+/* Best Seller — thin champagne border */
+.product-card--featured {
+  border-color: rgba(217, 181, 122, 0.55);
+}
+.product-card--featured:hover {
+  border-color: rgba(217, 181, 122, 0.85);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    0 28px 70px -22px rgba(217, 181, 122, 0.45);
+}
+
+/* Best Seller badge */
+.product-card__badge {
+  position: absolute;
+  top: var(--space-16);
+  left: var(--space-16);
+  padding: 5px var(--space-12);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--champagne-soft), var(--champagne));
+  border: 1px solid rgba(217, 181, 122, 0.65);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    0 4px 12px -4px rgba(217, 181, 122, 0.5);
+  z-index: 3;
+}
+
+/* Media */
+.product-card__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--abyss) 0%, var(--midnight) 100%);
+}
+.product-card__media img {
+  position: relative;
+  z-index: 2;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 760ms var(--ease-out);
+  filter: saturate(0.95);
+}
+.product-card:hover .product-card__media img {
+  transform: scale(1.04);
+}
+
+/* Fallback when image is missing */
+.product-card__media-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 35%, rgba(127, 216, 245, 0.22), transparent 70%),
+    linear-gradient(180deg, var(--abyss) 0%, var(--midnight) 100%);
+}
+.product-card__volume {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 400;
+  color: var(--mist);
+  letter-spacing: -0.025em;
+  opacity: 0.55;
+}
+
+/* Body */
+.product-card__body {
+  padding: var(--space-24) var(--space-24) var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  flex: 1;
+}
+.product-card__index {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--glacier);
+}
+.product-card--featured .product-card__index { color: var(--champagne); }
+.product-card__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 1.8vw, 1.7rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ice);
+  margin: 0;
+}
+.product-card__desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--mist-text);
+  line-height: 1.55;
+  flex: 1;
+}
+.product-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  align-self: flex-start;
+  margin-top: var(--space-8);
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  color: var(--glacier);
+  text-decoration: none;
+  transition: gap var(--t-fast) var(--ease-out), color var(--t-fast) var(--ease-out);
+}
+.product-card--featured .product-card__link { color: var(--champagne); }
+.product-card:hover .product-card__link { gap: var(--space-12); }
+
+@media (max-width: 1080px) {
+  .products-glass__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .products-glass__grid { grid-template-columns: 1fr; max-width: 380px; margin-inline: auto; }
+}
+
+/* =========================================================
+   WOW MOMENT — falling droplet + splash on first visit
+   ~1.4s total, then never again that session
+   ========================================================= */
+
+.wow-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 250; /* above loader (z:200) */
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 420ms var(--ease-out);
+}
+.wow-overlay__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, var(--midnight) 0%, var(--ink) 70%),
+    var(--ink);
+}
+.wow-overlay.is-fading { opacity: 0; }
+.wow-overlay.is-removed { display: none; }
+
+/* The droplet — falls from above the viewport, lands at center */
+.wow-drop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(120px, 18vw, 200px);
+  aspect-ratio: 200 / 240;
+  filter: drop-shadow(0 0 80px rgba(127, 216, 245, 0.55));
+  transform: translate(-50%, -180%);
+  animation:
+    wowFall 700ms cubic-bezier(0.55, 0, 0.7, 0) forwards,
+    wowSplat 320ms cubic-bezier(0.22, 1, 0.36, 1) 700ms forwards;
+}
+.wow-drop svg { width: 100%; height: 100%; }
+
+@keyframes wowFall {
+  from { transform: translate(-50%, -220%) scale(0.92); }
+  to   { transform: translate(-50%, -50%)  scale(1.05); }
+}
+@keyframes wowSplat {
+  0%   { transform: translate(-50%, -50%) scaleX(1.05) scaleY(1); }
+  45%  { transform: translate(-50%, -28%) scaleX(1.6)  scaleY(0.4); }
+  100% { transform: translate(-50%, -22%) scaleX(2.1)  scaleY(0.08); opacity: 0; }
+}
+
+/* Splash particles emit from center on impact */
+.wow-splashes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+.wow-splashes__p {
+  position: absolute;
+  width: 14px;
+  height: 18px;
+  margin-left: -7px;
+  margin-top: -9px;
+  background: linear-gradient(180deg, var(--aqua-glow), var(--glacier));
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  filter: drop-shadow(0 0 8px var(--aqua-glow));
+  transform: rotate(var(--angle)) translateX(0) scale(0);
+  opacity: 0;
+  animation: wowSplashFly 750ms cubic-bezier(0.22, 1, 0.36, 1) 760ms forwards;
+}
+@keyframes wowSplashFly {
+  0%   { transform: rotate(var(--angle)) translateX(0)              scale(0);   opacity: 0; }
+  18%  { transform: rotate(var(--angle)) translateX(40px)           scale(1);   opacity: 1; }
+  100% { transform: rotate(var(--angle)) translateX(var(--dist))   scale(0.35); opacity: 0; }
+}
+
+/* Surface ripple ring at impact */
+.wow-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
+  border: 2px solid rgba(127, 216, 245, 0.5);
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  animation: wowRipple 900ms cubic-bezier(0.22, 1, 0.36, 1) 740ms forwards;
+}
+@keyframes wowRipple {
+  0%   { transform: scale(0);   opacity: 0; }
+  10%  { opacity: 1; }
+  100% { transform: scale(14);  opacity: 0; }
+}
+
+/* While wow is running, hide nav + hero content */
+.wow-running .nav,
+.wow-running .hero__content,
+.wow-running .hero__credentials,
+.wow-running .hero__media,
+.wow-running .hero__caustics,
+.wow-running .progress-bar,
+.wow-running .liquid-cursor { opacity: 0; visibility: hidden; }
+
+/* As wow finishes, splash "forms" the nav and hero */
+.wow-revealed .nav {
+  animation: wowNavIn 720ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.wow-revealed .hero__media,
+.wow-revealed .hero__caustics {
+  animation: wowFadeIn 800ms ease-out 100ms backwards;
+}
+.wow-revealed .hero__content {
+  animation: wowFadeUp 900ms cubic-bezier(0.22, 1, 0.36, 1) 200ms backwards;
+}
+.wow-revealed .hero__credentials {
+  animation: wowFadeUp 900ms cubic-bezier(0.22, 1, 0.36, 1) 360ms backwards;
+}
+
+@keyframes wowNavIn {
+  from { transform: translateY(-120%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+@keyframes wowFadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes wowFadeUp  {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* When wow is gated (already played or reduced motion), show content immediately */
+.wow-skipped #wowOverlay { display: none; }
+
+/* Reduced motion — no wow at all, content visible from the start */
+@media (prefers-reduced-motion: reduce) {
+  .wow-overlay { display: none !important; }
+  .wow-running .nav,
+  .wow-running .hero__content,
+  .wow-running .hero__credentials,
+  .wow-running .hero__media,
+  .wow-running .hero__caustics,
+  .wow-running .progress-bar,
+  .wow-running .liquid-cursor { opacity: 1 !important; visibility: visible !important; }
+  .wow-revealed * { animation: none !important; }
+}
+
 /* ===== STATS — 4 glass cards ===== */
 .stats {
   background: var(--ink);

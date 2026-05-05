@@ -11,6 +11,38 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isFinePointer  = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
+  /* -------------------- WOW MOMENT — choreography -------------------- */
+  /* Inline script in <body> decided whether the wow runs (sets `.wow-running`).
+     liquid.js orchestrates the remaining timing if it did. */
+  const wowOverlay = document.getElementById('wowOverlay');
+  if (wowOverlay) {
+    if (document.body.classList.contains('wow-running')) {
+      const prevOverflow = document.documentElement.style.overflow;
+      document.documentElement.style.overflow = 'hidden';
+
+      // 1000ms: overlay starts fading; content begins revealing
+      setTimeout(() => {
+        wowOverlay.classList.add('is-fading');
+        document.body.classList.remove('wow-running');
+        document.body.classList.add('wow-revealed');
+      }, 1000);
+
+      // 1500ms: overlay removed from DOM, scroll unlocked
+      setTimeout(() => {
+        wowOverlay.remove();
+        document.documentElement.style.overflow = prevOverflow;
+      }, 1500);
+
+      // 2400ms: drop reveal helper class
+      setTimeout(() => {
+        document.body.classList.remove('wow-revealed');
+      }, 2400);
+    } else {
+      // Inline gate decided to skip — kill the overlay
+      wowOverlay.remove();
+    }
+  }
+
   /* -------------------- Liquid ripple -------------------- */
   if (!prefersReduced) {
     document.addEventListener('pointerdown', (e) => {

@@ -23,6 +23,70 @@
 </head>
 <body data-page="home">
 
+  <!-- Inline gate: synchronously decide whether the wow plays. Avoids any FOUC. -->
+  <script>
+    (function () {
+      try {
+        var KEY = 'reyon-wow-played-v1';
+        var played = sessionStorage.getItem(KEY) === '1';
+        var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (played || reduced) return;
+        document.body.classList.add('wow-running');
+        sessionStorage.setItem(KEY, '1');
+        // Safety: never leave content hidden if liquid.js fails to load
+        setTimeout(function () {
+          document.body.classList.remove('wow-running');
+          document.body.classList.add('wow-revealed');
+          var ov = document.getElementById('wowOverlay');
+          if (ov) ov.remove();
+        }, 3500);
+      } catch (_) {}
+    })();
+  </script>
+
+  <!-- WOW MOMENT — falling droplet (first visit per session) -->
+  <div class="wow-overlay" id="wowOverlay" aria-hidden="true">
+    <div class="wow-overlay__bg"></div>
+    <div class="wow-drop">
+      <svg viewBox="0 0 200 240" width="100%" height="100%">
+        <defs>
+          <linearGradient id="wowG" x1="0.4" y1="0" x2="0.6" y2="1">
+            <stop offset="0%"  stop-color="#7FD8F5"/>
+            <stop offset="55%" stop-color="#4FB8E0"/>
+            <stop offset="100%" stop-color="#0B1626"/>
+          </linearGradient>
+          <radialGradient id="wowCore" cx="0.4" cy="0.35" r="0.5">
+            <stop offset="0%"  stop-color="rgba(255,255,255,.7)"/>
+            <stop offset="100%" stop-color="rgba(127,216,245,0)"/>
+          </radialGradient>
+          <radialGradient id="wowGlow">
+            <stop offset="0%"   stop-color="rgba(127,216,245,.55)"/>
+            <stop offset="100%" stop-color="rgba(127,216,245,0)"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="140" r="130" fill="url(#wowGlow)"/>
+        <path d="M100 10 C 148 10, 178 110, 178 160 A 78 78 0 1 1 22 160 C 22 110, 52 10, 100 10 Z" fill="url(#wowG)" stroke="rgba(127,216,245,0.5)" stroke-width="1"/>
+        <path d="M100 10 C 148 10, 178 110, 178 160 A 78 78 0 1 1 22 160 C 22 110, 52 10, 100 10 Z" fill="url(#wowCore)"/>
+        <ellipse cx="74" cy="110" rx="14" ry="38" fill="white" opacity="0.55" transform="rotate(-22 74 110)"/>
+        <ellipse cx="84" cy="78" rx="5" ry="14" fill="white" opacity="0.9" transform="rotate(-22 84 78)"/>
+      </svg>
+    </div>
+    <div class="wow-splashes" aria-hidden="true">
+      <span class="wow-splashes__p" style="--angle: 0deg;   --dist: 280px"></span>
+      <span class="wow-splashes__p" style="--angle: 36deg;  --dist: 240px"></span>
+      <span class="wow-splashes__p" style="--angle: 72deg;  --dist: 300px"></span>
+      <span class="wow-splashes__p" style="--angle: 108deg; --dist: 260px"></span>
+      <span class="wow-splashes__p" style="--angle: 144deg; --dist: 240px"></span>
+      <span class="wow-splashes__p" style="--angle: 180deg; --dist: 280px"></span>
+      <span class="wow-splashes__p" style="--angle: 216deg; --dist: 240px"></span>
+      <span class="wow-splashes__p" style="--angle: 252deg; --dist: 260px"></span>
+      <span class="wow-splashes__p" style="--angle: 288deg; --dist: 220px"></span>
+      <span class="wow-splashes__p" style="--angle: 324deg; --dist: 280px"></span>
+    </div>
+    <!-- Surface ripple ring at impact -->
+    <div class="wow-ripple" aria-hidden="true"></div>
+  </div>
+
   <!-- Loader -->
   <div class="loader" id="loader" aria-hidden="true">
     <svg class="loader__logo" viewBox="0 0 80 100" width="60" height="80">
@@ -200,8 +264,8 @@
       </div>
     </section>
 
-    <!-- ============ PRODUCTS PREVIEW ============ -->
-    <section class="section products" id="products">
+    <!-- ============ PRODUCTS — 4 GLASS CARDS ============ -->
+    <section class="section products-glass" id="products">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow reveal" data-reveal>
@@ -217,124 +281,85 @@
           </p>
         </div>
 
-        <div class="products__grid">
-          <article class="product tilt reveal" data-reveal data-reveal-delay="0" data-cursor="view">
-            <span class="product__index">01</span>
-            <div class="product__media">
-              <svg viewBox="0 0 160 320" preserveAspectRatio="xMidYMid meet">
-                <defs><linearGradient id="pB1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B5F2FA" stop-opacity=".95"/><stop offset="100%" stop-color="#00D4F5" stop-opacity=".75"/></linearGradient></defs>
-                <path d="M58 50 Q58 35 80 35 Q102 35 102 50 L102 80 Q118 88 122 115 L122 290 Q122 308 102 308 L58 308 Q38 308 38 290 L38 115 Q42 88 58 80 Z" fill="url(#pB1)" stroke="rgba(255,255,255,.25)"/>
-                <rect x="64" y="20" width="32" height="28" rx="4" fill="#03045E"/>
-                <rect x="44" y="160" width="72" height="80" rx="4" fill="rgba(3,4,94,.85)"/>
-                <text x="80" y="190" text-anchor="middle" font-family="Space Grotesk" font-weight="500" font-size="13" fill="#fff" letter-spacing="2">REYON</text>
-                <line x1="56" y1="200" x2="104" y2="200" stroke="rgba(255,255,255,.3)"/>
-                <text x="80" y="225" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="13" fill="#5DEFFF" letter-spacing="2">50CL</text>
-              </svg>
-              <div class="product__halo"></div>
-            </div>
-            <div class="product__body">
-              <div class="product__row">
-                <span class="product__tag">Personal</span>
-                <h3 class="product__name">Reyon 50CL</h3>
+        <div class="products-glass__grid">
+          <article class="glass product-card reveal" data-reveal data-reveal-delay="0">
+            <div class="product-card__media">
+              <img src="assets/img/products/50cl.jpg" alt="Reyon 50CL bottle" loading="lazy" width="800" height="1000" onerror="this.style.display='none'" />
+              <div class="product-card__media-fallback" aria-hidden="true">
+                <span class="product-card__volume">50CL</span>
               </div>
-              <p class="product__desc">Compact and convenient. The perfect on-the-go companion for daily hydration.</p>
-              <a href="products.html#reyon-50cl" class="product__link ripple" data-cursor="link">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__index">01 · Personal</span>
+              <h3 class="product-card__name">Reyon 50CL</h3>
+              <p class="product-card__desc">Compact and convenient. The perfect on-the-go companion for daily hydration.</p>
+              <a href="products.html#reyon-50cl" class="product-card__link">
                 <span>View details</span>
-                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
           </article>
 
-          <article class="product tilt is-featured reveal" data-reveal data-reveal-delay="120" data-cursor="view">
-            <span class="product__index">02</span>
-            <span class="product__badge">Best Seller</span>
-            <div class="product__media">
-              <svg viewBox="0 0 160 320" preserveAspectRatio="xMidYMid meet">
-                <defs><linearGradient id="pB2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B5F2FA" stop-opacity=".95"/><stop offset="100%" stop-color="#0077B6" stop-opacity=".8"/></linearGradient></defs>
-                <path d="M55 45 Q55 30 80 30 Q105 30 105 45 L105 78 Q123 88 128 115 L128 295 Q128 312 108 312 L52 312 Q32 312 32 295 L32 115 Q37 88 55 78 Z" fill="url(#pB2)" stroke="rgba(255,255,255,.25)"/>
-                <rect x="62" y="14" width="36" height="32" rx="5" fill="#03045E"/>
-                <rect x="40" y="155" width="80" height="92" rx="5" fill="rgba(3,4,94,.85)"/>
-                <text x="80" y="188" text-anchor="middle" font-family="Space Grotesk" font-weight="500" font-size="14" fill="#fff" letter-spacing="2">REYON</text>
-                <line x1="54" y1="200" x2="106" y2="200" stroke="rgba(255,255,255,.3)"/>
-                <text x="80" y="228" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="14" fill="#5DEFFF" letter-spacing="2">75CL</text>
-              </svg>
-              <div class="product__halo"></div>
-            </div>
-            <div class="product__body">
-              <div class="product__row">
-                <span class="product__tag">Mid-size</span>
-                <h3 class="product__name">Reyon 75CL</h3>
+          <article class="glass product-card product-card--featured reveal" data-reveal data-reveal-delay="120">
+            <span class="product-card__badge">Best Seller</span>
+            <div class="product-card__media">
+              <img src="assets/img/products/75cl.jpg" alt="Reyon 75CL bottle" loading="lazy" width="800" height="1000" onerror="this.style.display='none'" />
+              <div class="product-card__media-fallback" aria-hidden="true">
+                <span class="product-card__volume">75CL</span>
               </div>
-              <p class="product__desc">A refreshing mid-size option ideal for events, meetings and workouts.</p>
-              <a href="products.html#reyon-75cl" class="product__link ripple" data-cursor="link">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__index">02 · Mid-size</span>
+              <h3 class="product-card__name">Reyon 75CL</h3>
+              <p class="product-card__desc">A refreshing mid-size option ideal for events, meetings and workouts.</p>
+              <a href="products.html#reyon-75cl" class="product-card__link">
                 <span>View details</span>
-                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
           </article>
 
-          <article class="product tilt reveal" data-reveal data-reveal-delay="240" data-cursor="view">
-            <span class="product__index">03</span>
-            <div class="product__media">
-              <svg viewBox="0 0 160 320" preserveAspectRatio="xMidYMid meet">
-                <defs><linearGradient id="pB3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF" stop-opacity=".9"/><stop offset="100%" stop-color="#0077B6" stop-opacity=".85"/></linearGradient></defs>
-                <path d="M50 40 Q50 25 80 25 Q110 25 110 40 L110 75 Q130 86 135 115 L135 298 Q135 315 113 315 L47 315 Q25 315 25 298 L25 115 Q30 86 50 75 Z" fill="url(#pB3)" stroke="rgba(255,255,255,.25)"/>
-                <rect x="60" y="10" width="40" height="34" rx="6" fill="#03045E"/>
-                <rect x="36" y="150" width="88" height="100" rx="6" fill="rgba(3,4,94,.85)"/>
-                <text x="80" y="186" text-anchor="middle" font-family="Space Grotesk" font-weight="500" font-size="15" fill="#fff" letter-spacing="2">REYON</text>
-                <line x1="50" y1="200" x2="110" y2="200" stroke="rgba(255,255,255,.3)"/>
-                <text x="80" y="228" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="14" fill="#5DEFFF" letter-spacing="2">1.5L</text>
-              </svg>
-              <div class="product__halo"></div>
-            </div>
-            <div class="product__body">
-              <div class="product__row">
-                <span class="product__tag">Family</span>
-                <h3 class="product__name">Reyon 1.5L</h3>
+          <article class="glass product-card reveal" data-reveal data-reveal-delay="240">
+            <div class="product-card__media">
+              <img src="assets/img/products/1-5l.jpg" alt="Reyon 1.5L bottle" loading="lazy" width="800" height="1000" onerror="this.style.display='none'" />
+              <div class="product-card__media-fallback" aria-hidden="true">
+                <span class="product-card__volume">1.5L</span>
               </div>
-              <p class="product__desc">A larger format for the home and office. Built for daily, sustained hydration.</p>
-              <a href="products.html#reyon-1-5l" class="product__link ripple" data-cursor="link">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__index">03 · Family</span>
+              <h3 class="product-card__name">Reyon 1.5L</h3>
+              <p class="product-card__desc">A larger format for the home and office. Built for daily, sustained hydration.</p>
+              <a href="products.html#reyon-1-5l" class="product-card__link">
                 <span>View details</span>
-                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
           </article>
 
-          <article class="product tilt reveal" data-reveal data-reveal-delay="360" data-cursor="view">
-            <span class="product__index">04</span>
-            <span class="product__badge product__badge--alt">Bulk</span>
-            <div class="product__media">
-              <svg viewBox="0 0 200 320" preserveAspectRatio="xMidYMid meet">
-                <defs><linearGradient id="pB4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B5F2FA" stop-opacity=".95"/><stop offset="100%" stop-color="#00D4F5" stop-opacity=".85"/></linearGradient></defs>
-                <path d="M70 28 Q70 18 100 18 Q130 18 130 28 L130 50 Q160 60 165 90 L168 290 Q168 305 150 305 L50 305 Q32 305 32 290 L35 90 Q40 60 70 50 Z" fill="url(#pB4)" stroke="rgba(255,255,255,.25)"/>
-                <rect x="78" y="6" width="44" height="20" rx="4" fill="#03045E"/>
-                <ellipse cx="100" cy="60" rx="38" ry="10" fill="rgba(255,255,255,.3)"/>
-                <rect x="40" y="150" width="120" height="110" rx="6" fill="rgba(3,4,94,.85)"/>
-                <text x="100" y="188" text-anchor="middle" font-family="Space Grotesk" font-weight="500" font-size="18" fill="#fff" letter-spacing="2">REYON</text>
-                <line x1="60" y1="200" x2="140" y2="200" stroke="rgba(255,255,255,.3)"/>
-                <text x="100" y="232" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#5DEFFF" letter-spacing="2">19L</text>
-                <text x="100" y="250" text-anchor="middle" font-family="Inter" font-size="9" fill="rgba(255,255,255,.55)" letter-spacing="2">DISPENSER</text>
-              </svg>
-              <div class="product__halo"></div>
-            </div>
-            <div class="product__body">
-              <div class="product__row">
-                <span class="product__tag">Bulk</span>
-                <h3 class="product__name">Reyon 19L</h3>
+          <article class="glass product-card reveal" data-reveal data-reveal-delay="360">
+            <div class="product-card__media">
+              <img src="assets/img/products/19l.jpg" alt="Reyon 19L dispenser" loading="lazy" width="800" height="1000" onerror="this.style.display='none'" />
+              <div class="product-card__media-fallback" aria-hidden="true">
+                <span class="product-card__volume">19L</span>
               </div>
-              <p class="product__desc">Refillable dispenser water for offices, homes, churches, malls and supermarkets.</p>
-              <a href="products.html#reyon-19l" class="product__link ripple" data-cursor="link">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__index">04 · Bulk</span>
+              <h3 class="product-card__name">Reyon 19L</h3>
+              <p class="product-card__desc">Refillable dispenser water for offices, homes, churches, malls and supermarkets.</p>
+              <a href="products.html#reyon-19l" class="product-card__link">
                 <span>View details</span>
-                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
           </article>
         </div>
 
         <div class="section__cta reveal" data-reveal>
-          <a href="products.html" class="btn btn--ghost btn--lg ripple magnetic" data-cursor="link">
+          <a href="products.html" class="btn-liquid">
             <span>See full range</span>
-            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
