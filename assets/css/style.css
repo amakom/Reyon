@@ -2621,9 +2621,10 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 75% 95% at 22% 50%, rgba(6, 9, 15, 0.88) 0%, rgba(6, 9, 15, 0.5) 40%, transparent 75%),
-    linear-gradient(105deg, var(--ink) 0%, rgba(6, 9, 15, 0.96) 30%, rgba(6, 9, 15, 0.65) 58%, rgba(6, 9, 15, 0.22) 100%),
-    linear-gradient(180deg, transparent 50%, rgba(6, 9, 15, 0.55) 100%);
+    /* Gentle left-side anchor for type — only as much as needed */
+    linear-gradient(105deg, var(--ink) 0%, rgba(6, 9, 15, 0.6) 35%, rgba(6, 9, 15, 0.15) 65%, transparent 100%),
+    /* Bottom edge falloff */
+    linear-gradient(180deg, transparent 60%, rgba(6, 9, 15, 0.4) 100%);
 }
 
 /* =========================================================
@@ -2709,9 +2710,8 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
   color: var(--ice);
   margin: 0 0 var(--space-32);
   text-wrap: balance;
-  text-shadow:
-    0 2px 24px rgba(0, 0, 0, 0.85),
-    0 1px 4px rgba(0, 0, 0, 0.6);
+  /* Subtle haloing only — image now has real negative space, no need to overcompensate */
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 .hero__title em {
   display: inline-block;
@@ -2721,8 +2721,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  /* drop-shadow on the gradient text since text-shadow doesn't apply to bg-clip */
-  filter: drop-shadow(0 2px 24px rgba(0, 0, 0, 0.55));
+  filter: drop-shadow(0 1px 8px rgba(0, 0, 0, 0.3));
 }
 .hero__lede {
   font-family: var(--font-body);
@@ -2731,7 +2730,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
   max-width: 540px;
   line-height: var(--lead-normal);
   margin: 0 0 var(--space-48);
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.85);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 .hero__cta {
   display: flex;
