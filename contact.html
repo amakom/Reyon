@@ -9,7 +9,7 @@
 
   <title>Contact — Reyon</title>
 
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
@@ -38,15 +38,8 @@
 
   <header class="nav" id="nav">
     <div class="nav__inner container">
-      <a href="index.html" class="nav__brand magnetic">
-        <span class="nav__logo">
-          <svg viewBox="0 0 32 32" width="28" height="28">
-            <defs><linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs>
-            <path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#logoG)"/>
-            <circle cx="12" cy="20" r="2.4" fill="rgba(255,255,255,.55)"/>
-          </svg>
-        </span>
-        <span class="nav__name">REYON</span>
+      <a href="index.html" class="nav__brand magnetic" aria-label="Reyon home">
+        <img class="nav__brand-logo" src="assets/img/logo.svg" alt="Reyon" width="120" height="36" />
       </a>
       <nav class="nav__menu" id="navMenu" aria-label="Primary">
         <a href="index.html" class="nav__link" data-cursor="link">Home</a>
@@ -271,8 +264,7 @@
       <div class="footer__top">
         <div class="footer__brand">
           <div class="footer__logo">
-            <svg viewBox="0 0 32 32" width="28" height="28"><defs><linearGradient id="footG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs><path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#footG)"/></svg>
-            <span>REYON</span>
+            <img class="footer__brand-logo" src="assets/img/logo.svg" alt="Reyon" width="140" height="42" />
           </div>
           <p>Premium drinking water — purified, mineral-balanced, and bottled with care across Nigeria.</p>
         </div>

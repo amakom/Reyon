@@ -52,6 +52,53 @@
     }, { passive: true });
   }
 
+  /* -------------------- HERO SLIDER (3-slide crossfade) -------------------- */
+  const heroSlides = document.getElementById('heroSlides');
+  if (heroSlides) {
+    const slides = Array.from(heroSlides.querySelectorAll('.hero__slide'));
+    const dots = Array.from(document.querySelectorAll('.hero__dot'));
+    const prevBtn = document.getElementById('heroPrev');
+    const nextBtn = document.getElementById('heroNext');
+    let active = 0;
+    let timer = null;
+    const INTERVAL = 7000;
+
+    const goto = (i) => {
+      active = (i + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle('is-active', idx === active));
+      dots.forEach((d, idx) => {
+        d.classList.toggle('is-active', idx === active);
+        d.setAttribute('aria-selected', idx === active ? 'true' : 'false');
+      });
+    };
+    const start = () => {
+      stop();
+      if (prefersReduced) return;
+      timer = setInterval(() => goto(active + 1), INTERVAL);
+    };
+    const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+
+    prevBtn?.addEventListener('click', () => { goto(active - 1); start(); });
+    nextBtn?.addEventListener('click', () => { goto(active + 1); start(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { goto(i); start(); }));
+
+    heroSlides.addEventListener('mouseenter', stop);
+    heroSlides.addEventListener('mouseleave', start);
+
+    // Touch swipe
+    let touchX = 0;
+    heroSlides.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+    heroSlides.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) {
+        goto(active + (dx < 0 ? 1 : -1));
+        start();
+      }
+    });
+
+    start();
+  }
+
   /* -------------------- WOW MOMENT — choreography -------------------- */
   /* Inline script in <body> decided whether the wow runs (sets `.wow-running`).
      liquid.js orchestrates the remaining timing if it did. */
