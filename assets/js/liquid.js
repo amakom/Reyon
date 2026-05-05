@@ -11,12 +11,15 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isFinePointer  = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  /* -------------------- PAGE TRANSITION + PREFETCH — fast water-ripple wipe -------------------- */
+  /* -------------------- LINK PREFETCH (no click interception) --------------------
+     Page transitions are handled natively via @view-transition CSS for browsers
+     that support it. We just prefetch on hover/touch so the next page is cached
+     by the time the user clicks. No JS click handler => navigation is instant. */
   if (!prefersReduced) {
     const SAME_PAGE_RX = /^(#|mailto:|tel:|javascript:|sms:)/i;
     const prefetched = new Set();
 
-    const isInternalNav = (link) => {
+    const internalNavURL = (link) => {
       if (!link) return null;
       if (link.target && link.target !== '_self') return null;
       const href = link.getAttribute('href');
@@ -28,50 +31,25 @@
       return url;
     };
 
-    // Prefetch on hover/touchstart so the next page is already in the cache when clicked
     const prefetch = (url) => {
       const href = url.href;
       if (prefetched.has(href)) return;
       prefetched.add(href);
-      const link = document.createElement('link');
-      link.rel = 'prefetch';
-      link.href = href;
-      link.as = 'document';
-      document.head.appendChild(link);
+      const tag = document.createElement('link');
+      tag.rel = 'prefetch';
+      tag.href = href;
+      tag.as = 'document';
+      document.head.appendChild(tag);
     };
+
     document.addEventListener('mouseover', (e) => {
-      const url = isInternalNav(e.target.closest && e.target.closest('a[href]'));
+      const url = internalNavURL(e.target.closest && e.target.closest('a[href]'));
       if (url) prefetch(url);
     }, { passive: true });
     document.addEventListener('touchstart', (e) => {
-      const url = isInternalNav(e.target.closest && e.target.closest('a[href]'));
+      const url = internalNavURL(e.target.closest && e.target.closest('a[href]'));
       if (url) prefetch(url);
     }, { passive: true });
-
-    // Click → wipe + navigate (overlapping for snappier feel)
-    document.addEventListener('click', (e) => {
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-      const link = e.target.closest('a[href]');
-      const url = isInternalNav(link);
-      if (!url) return;
-
-      e.preventDefault();
-
-      const overlay = document.createElement('div');
-      overlay.className = 'page-transition';
-      overlay.style.setProperty('--x', e.clientX + 'px');
-      overlay.style.setProperty('--y', e.clientY + 'px');
-      document.body.appendChild(overlay);
-
-      // Force reflow → trigger CSS transition
-      void overlay.offsetWidth;
-      overlay.classList.add('is-active');
-
-      // Fire navigation while the wipe is still expanding (180ms in).
-      // The new page begins fetching/painting overlapped with the visual,
-      // and prefetch above usually has it cached already.
-      setTimeout(() => { window.location.href = url.href; }, 180);
-    });
   }
 
   /* -------------------- WOW MOMENT — choreography -------------------- */
