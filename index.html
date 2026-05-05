@@ -365,6 +365,155 @@
       </div>
     </section>
 
+    <!-- ============ PROCESS — Vertical timeline with flowing water line ============ -->
+    <section class="section process-flow" id="process" aria-label="Our purification process">
+      <div class="process-flow__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-reveal>
+            <span class="eyebrow__dot"></span>
+            How We Refine
+          </span>
+          <h2 class="section__title reveal" data-reveal>
+            Three stages. <em>Zero</em> compromise.
+          </h2>
+          <p class="section__lede reveal" data-reveal data-reveal-delay="150">
+            Every drop passes through a meticulously engineered chain
+            before it ever reaches your bottle.
+          </p>
+        </div>
+
+        <div class="process-flow__timeline">
+          <!-- Flowing water line -->
+          <div class="process-flow__line" aria-hidden="true">
+            <span class="process-flow__line-flow"></span>
+          </div>
+
+          <article class="glass process-stage process-stage--left reveal" data-reveal>
+            <div class="process-stage__node" aria-hidden="true">
+              <span class="process-stage__node-pulse"></span>
+            </div>
+            <div class="process-stage__media">
+              <img src="assets/img/process/carbon-filtration.jpg"
+                   alt="Activated carbon filtration"
+                   loading="lazy"
+                   width="1200" height="800"
+                   onerror="this.style.display='none'" />
+              <div class="process-stage__media-fallback" aria-hidden="true">
+                <svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <linearGradient id="pf1" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#11243D"/>
+                      <stop offset="100%" stop-color="#0B1626"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="200" height="140" fill="url(#pf1)"/>
+                  <g fill="#4FB8E0" opacity="0.6">
+                    <circle cx="60" cy="50" r="2"/>
+                    <circle cx="80" cy="65" r="2"/>
+                    <circle cx="100" cy="55" r="2"/>
+                    <circle cx="120" cy="68" r="2"/>
+                    <circle cx="140" cy="50" r="2"/>
+                    <circle cx="70" cy="80" r="1.5"/>
+                    <circle cx="110" cy="85" r="1.5"/>
+                    <circle cx="130" cy="80" r="1.5"/>
+                    <circle cx="90" cy="100" r="1.5"/>
+                    <circle cx="120" cy="105" r="1.5"/>
+                  </g>
+                  <path d="M 30 30 Q 100 20 170 30" stroke="rgba(127,216,245,.4)" stroke-width="0.8" fill="none"/>
+                  <path d="M 30 110 Q 100 120 170 110" stroke="rgba(127,216,245,.4)" stroke-width="0.8" fill="none"/>
+                </svg>
+              </div>
+            </div>
+            <div class="process-stage__body">
+              <span class="process-stage__num">01 — Stage One</span>
+              <h3 class="process-stage__title">Carbon <em>filtration</em></h3>
+              <p class="process-stage__desc">Activated carbon filters strip impurities, chlorine and organic compounds — preserving the water's natural integrity.</p>
+            </div>
+          </article>
+
+          <article class="glass process-stage process-stage--right reveal" data-reveal>
+            <div class="process-stage__node" aria-hidden="true">
+              <span class="process-stage__node-pulse"></span>
+            </div>
+            <div class="process-stage__media">
+              <img src="assets/img/process/demineralization.jpg"
+                   alt="Reverse osmosis demineralization"
+                   loading="lazy"
+                   width="1200" height="800"
+                   onerror="this.style.display='none'" />
+              <div class="process-stage__media-fallback" aria-hidden="true">
+                <svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <linearGradient id="pf2" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#0B1626"/>
+                      <stop offset="100%" stop-color="#11243D"/>
+                    </linearGradient>
+                    <radialGradient id="pf2g">
+                      <stop offset="0%" stop-color="rgba(127,216,245,.5)"/>
+                      <stop offset="100%" stop-color="rgba(127,216,245,0)"/>
+                    </radialGradient>
+                  </defs>
+                  <rect width="200" height="140" fill="url(#pf2)"/>
+                  <circle cx="100" cy="70" r="45" fill="url(#pf2g)"/>
+                  <circle cx="100" cy="70" r="32" fill="none" stroke="rgba(127,216,245,.5)" stroke-width="0.8"/>
+                  <circle cx="100" cy="70" r="20" fill="none" stroke="rgba(127,216,245,.4)" stroke-width="0.8"/>
+                  <circle cx="100" cy="70" r="10" fill="none" stroke="rgba(127,216,245,.6)" stroke-width="0.8"/>
+                  <circle cx="100" cy="70" r="3" fill="#7FD8F5"/>
+                </svg>
+              </div>
+            </div>
+            <div class="process-stage__body">
+              <span class="process-stage__num">02 — Stage Two</span>
+              <h3 class="process-stage__title">Reverse <em>osmosis</em></h3>
+              <p class="process-stage__desc">Demineralization at the molecular level removes dissolved minerals and contaminants for unmatched clarity.</p>
+            </div>
+          </article>
+
+          <article class="glass process-stage process-stage--left reveal" data-reveal>
+            <div class="process-stage__node" aria-hidden="true">
+              <span class="process-stage__node-pulse"></span>
+            </div>
+            <div class="process-stage__media">
+              <img src="assets/img/process/uv-ozone.jpg"
+                   alt="UV and ozone disinfection"
+                   loading="lazy"
+                   width="1200" height="800"
+                   onerror="this.style.display='none'" />
+              <div class="process-stage__media-fallback" aria-hidden="true">
+                <svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <linearGradient id="pf3" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#11243D"/>
+                      <stop offset="100%" stop-color="#0B1626"/>
+                    </linearGradient>
+                    <radialGradient id="pf3g">
+                      <stop offset="0%" stop-color="rgba(217,181,122,.4)"/>
+                      <stop offset="60%" stop-color="rgba(127,216,245,.3)"/>
+                      <stop offset="100%" stop-color="rgba(127,216,245,0)"/>
+                    </radialGradient>
+                  </defs>
+                  <rect width="200" height="140" fill="url(#pf3)"/>
+                  <ellipse cx="100" cy="70" rx="60" ry="40" fill="url(#pf3g)"/>
+                  <line x1="100" y1="20" x2="100" y2="55" stroke="rgba(255,255,255,.5)" stroke-width="0.8"/>
+                  <line x1="100" y1="85" x2="100" y2="120" stroke="rgba(255,255,255,.5)" stroke-width="0.8"/>
+                  <line x1="40"  y1="70" x2="80"  y2="70" stroke="rgba(255,255,255,.5)" stroke-width="0.8"/>
+                  <line x1="120" y1="70" x2="160" y2="70" stroke="rgba(255,255,255,.5)" stroke-width="0.8"/>
+                  <circle cx="100" cy="70" r="4" fill="#fff"/>
+                  <circle cx="100" cy="70" r="10" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="0.6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="process-stage__body">
+              <span class="process-stage__num">03 — Stage Three</span>
+              <h3 class="process-stage__title">UV &amp; ozone <em>finish</em></h3>
+              <p class="process-stage__desc">Ultraviolet light and ozone gas eliminate microorganisms — leaving water that's safe, sterile and ready to drink.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ VIDEO PLACEHOLDER ============ -->
     <section class="section video" id="video">
       <div class="container">
