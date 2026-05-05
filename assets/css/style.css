@@ -1395,16 +1395,31 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
 .logotype__text {
   display: inline-block;
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 400;
+  font-style: italic;
   font-size: clamp(6rem, 22vw, 22rem);
-  letter-spacing: -0.04em;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(0, 212, 245, 0.04) 60%, rgba(0, 212, 245, 0.02) 100%);
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(127, 216, 245, 0.85) 30%,
+    rgba(79, 184, 224, 0.55) 65%,
+    rgba(11, 22, 38, 0) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+  -webkit-text-stroke: 1px rgba(127, 216, 245, 0.35);
+  filter:
+    drop-shadow(0 0 60px rgba(127, 216, 245, 0.55))
+    drop-shadow(0 0 24px rgba(255, 255, 255, 0.12));
   user-select: none;
   will-change: transform;
+}
+.logotype { background: var(--ink); padding: var(--space-32) 0 var(--space-16); }
+.logotype__inner { padding: 0 16px; line-height: 0.8; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .logotype__text { filter: drop-shadow(0 0 40px rgba(127, 216, 245, 0.4)); }
 }
 
 /* ============ FOOTER ============ */
@@ -2998,11 +3013,15 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
       rgba(79, 184, 224, 0.96) 30%,
       var(--midnight) 80%);
   clip-path: circle(0 at var(--x, 50%) var(--y, 50%));
-  transition: clip-path 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: clip-path 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: clip-path;
 }
 .page-transition.is-active {
   clip-path: circle(160% at var(--x, 50%) var(--y, 50%));
 }
+
+/* Kill the legacy v2 loader globally — page transition is now the only loading affordance */
+.loader { display: none !important; }
 
 /* =========================================================
    v3 step 10 — REDUCED-MOTION sweep · final guard

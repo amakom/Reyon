@@ -11,41 +11,66 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isFinePointer  = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  /* -------------------- PAGE TRANSITION — 400ms water-ripple wipe -------------------- */
+  /* -------------------- PAGE TRANSITION + PREFETCH — fast water-ripple wipe -------------------- */
   if (!prefersReduced) {
     const SAME_PAGE_RX = /^(#|mailto:|tel:|javascript:|sms:)/i;
+    const prefetched = new Set();
 
+    const isInternalNav = (link) => {
+      if (!link) return null;
+      if (link.target && link.target !== '_self') return null;
+      const href = link.getAttribute('href');
+      if (!href || SAME_PAGE_RX.test(href)) return null;
+      let url;
+      try { url = new URL(href, location.href); } catch (_) { return null; }
+      if (url.origin !== location.origin) return null;
+      if (url.pathname === location.pathname && url.search === location.search) return null;
+      return url;
+    };
+
+    // Prefetch on hover/touchstart so the next page is already in the cache when clicked
+    const prefetch = (url) => {
+      const href = url.href;
+      if (prefetched.has(href)) return;
+      prefetched.add(href);
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = href;
+      link.as = 'document';
+      document.head.appendChild(link);
+    };
+    document.addEventListener('mouseover', (e) => {
+      const url = isInternalNav(e.target.closest && e.target.closest('a[href]'));
+      if (url) prefetch(url);
+    }, { passive: true });
+    document.addEventListener('touchstart', (e) => {
+      const url = isInternalNav(e.target.closest && e.target.closest('a[href]'));
+      if (url) prefetch(url);
+    }, { passive: true });
+
+    // Click → wipe + navigate (overlapping for snappier feel)
     document.addEventListener('click', (e) => {
-      // Only intercept primary clicks without modifier keys
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
       const link = e.target.closest('a[href]');
-      if (!link) return;
-      if (link.target && link.target !== '_self') return;
-      const href = link.getAttribute('href');
-      if (!href || SAME_PAGE_RX.test(href)) return;
-
-      // Resolve to absolute and skip cross-origin
-      let url;
-      try { url = new URL(href, location.href); } catch (_) { return; }
-      if (url.origin !== location.origin) return;
-      // Same path + same query (just different hash) → let the browser scroll
-      if (url.pathname === location.pathname && url.search === location.search) return;
+      const url = isInternalNav(link);
+      if (!url) return;
 
       e.preventDefault();
 
-      // Spawn the wipe overlay at click coordinates
       const overlay = document.createElement('div');
       overlay.className = 'page-transition';
       overlay.style.setProperty('--x', e.clientX + 'px');
       overlay.style.setProperty('--y', e.clientY + 'px');
       document.body.appendChild(overlay);
 
-      // Force reflow → trigger animation
+      // Force reflow → trigger CSS transition
       void overlay.offsetWidth;
       overlay.classList.add('is-active');
 
-      // After wipe completes, navigate
-      setTimeout(() => { window.location.href = url.href; }, 380);
+      // Fire navigation while the wipe is still expanding (180ms in).
+      // The new page begins fetching/painting overlapped with the visual,
+      // and prefetch above usually has it cached already.
+      setTimeout(() => { window.location.href = url.href; }, 180);
     });
   }
 
