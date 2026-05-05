@@ -581,8 +581,8 @@
       </div>
     </section>
 
-    <!-- ============ WHY ============ -->
-    <section class="section why" id="why">
+    <!-- ============ WHY REYON — Bento Grid ============ -->
+    <section class="section why-bento" id="why">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow reveal" data-reveal>
@@ -594,68 +594,83 @@
           </h2>
         </div>
 
-        <div class="why__grid">
-          <article class="benefit reveal" data-reveal data-reveal-delay="0">
-            <span class="benefit__num">01</span>
-            <div class="benefit__icon"><svg viewBox="0 0 32 32" width="26" height="26"><path d="M16 4C16 4 6 14 6 20a10 10 0 0 0 20 0C26 14 16 4 16 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="13" cy="20" r="2" fill="currentColor"/></svg></div>
-            <h3 class="benefit__title">Hydration</h3>
-            <p class="benefit__text">Replenishes the body with mineral-balanced water that restores cellular function.</p>
+        <div class="why-bento__grid">
+          <!-- Big card: Hydration -->
+          <article class="glass benefit-card benefit-card--lg reveal" data-reveal data-reveal-delay="0">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 40" width="28" height="36"><path d="M16 2C16 2 3 16 3 26a13 13 0 0 0 26 0C29 16 16 2 16 2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="26" r="2.5" fill="currentColor" opacity=".7"/></svg>
+            </div>
+            <div class="benefit-card__body">
+              <span class="benefit-card__num">01 — Hydration</span>
+              <h3 class="benefit-card__title">The foundation of how you <em>feel, focus &amp; perform.</em></h3>
+              <p class="benefit-card__desc">Replenishes the body with mineral-balanced water that restores cellular function. Hydration isn't routine — it's the quiet variable behind clarity, recovery, and the energy you bring to every part of the day.</p>
+            </div>
           </article>
-          <article class="benefit reveal" data-reveal data-reveal-delay="100">
-            <span class="benefit__num">02</span>
-            <div class="benefit__icon"><svg viewBox="0 0 32 32" width="26" height="26"><path d="M16 28V14M10 22l6-6 6 6M9 10c2-2 5-2 7 0 2-2 5-2 7 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <h3 class="benefit__title">100% Natural</h3>
-            <p class="benefit__text">No additives, no shortcuts — only water as nature intended it.</p>
+
+          <!-- Small: 100% Natural — leaf -->
+          <article class="glass benefit-card reveal" data-reveal data-reveal-delay="120">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="22" height="22"><path d="M5 27 C 5 15, 15 5, 27 5 C 27 17, 17 27, 5 27 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M5 27 L 24 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="benefit-card__title">100% Natural</h3>
+            <p class="benefit-card__desc">No additives, no shortcuts — only water as nature intended it.</p>
           </article>
-          <article class="benefit reveal" data-reveal data-reveal-delay="200">
-            <span class="benefit__num">03</span>
-            <div class="benefit__icon"><svg viewBox="0 0 32 32" width="26" height="26"><path d="M11 6a6 6 0 0 0-2 11v3a3 3 0 0 0 3 3h2v3h6v-3h2a3 3 0 0 0 3-3v-3a6 6 0 0 0-2-11 5 5 0 0 0-12 0Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-            <h3 class="benefit__title">Brain Boost</h3>
-            <p class="benefit__text">Supports focus and clarity — proper hydration is the brain's quiet performance edge.</p>
+
+          <!-- Small: Brain Boost — brain + droplet -->
+          <article class="glass benefit-card reveal" data-reveal data-reveal-delay="240">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="22" height="22"><path d="M11 5a5 5 0 0 0-2 9.5v2a2 2 0 0 0 2 2h2v3h6v-3h2a2 2 0 0 0 2-2v-2a5 5 0 0 0-2-9.5 4 4 0 0 0-10 0Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 26 C 16 26 13 28.5 13 30 a 1.8 1.8 0 0 0 3.6 0 C 16.6 28.5 16 26 16 26 Z" fill="currentColor" opacity=".75"/></svg>
+            </div>
+            <h3 class="benefit-card__title">Brain Boost</h3>
+            <p class="benefit-card__desc">Supports focus and clarity — hydration is the brain's quiet performance edge.</p>
           </article>
-          <article class="benefit reveal" data-reveal data-reveal-delay="300">
-            <span class="benefit__num">04</span>
-            <div class="benefit__icon"><svg viewBox="0 0 32 32" width="26" height="26"><circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8v8l5 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></div>
-            <h3 class="benefit__title">Antioxidants</h3>
-            <p class="benefit__text">Helps neutralize free radicals — a natural part of feeling and looking your best.</p>
+
+          <!-- Small: Antioxidants — shield -->
+          <article class="glass benefit-card reveal" data-reveal data-reveal-delay="360">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="22" height="22"><path d="M16 3 L 5 7 L 5 15 C 5 22, 9 27, 16 30 C 23 27, 27 22, 27 15 L 27 7 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 16 l 3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="benefit-card__title">Antioxidants</h3>
+            <p class="benefit-card__desc">Helps neutralize free radicals — feeling and looking your best.</p>
           </article>
-          <article class="benefit reveal" data-reveal data-reveal-delay="400">
-            <span class="benefit__num">05</span>
-            <div class="benefit__icon"><svg viewBox="0 0 32 32" width="26" height="26"><path d="M14 2L6 18h7l-2 12 11-16h-7l2-12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
-            <h3 class="benefit__title">Sustained Energy</h3>
-            <p class="benefit__text">Quiet fuel for everything you do — from morning routines to late-night work.</p>
+
+          <!-- Small: Sustained Energy — lightning -->
+          <article class="glass benefit-card reveal" data-reveal data-reveal-delay="480">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="22" height="22"><path d="M18 2 L 6 18 H 14 L 12 30 L 26 12 H 18 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="benefit-card__title">Sustained Energy</h3>
+            <p class="benefit-card__desc">Quiet fuel for everything — morning routines to late-night work.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONTACT CTA ============ -->
-    <section class="section cta-banner" id="cta">
+    <!-- ============ FINAL CTA — Editorial headline + single champagne button ============ -->
+    <section class="section cta-final" id="cta">
+      <div class="cta-final__bg" aria-hidden="true"></div>
       <div class="container">
-        <div class="cta-banner__inner reveal" data-reveal>
-          <div class="cta-banner__bg" aria-hidden="true"></div>
-          <div class="cta-banner__content">
-            <span class="eyebrow eyebrow--light">
-              <span class="eyebrow__dot"></span>
-              Get In Touch
-            </span>
-            <h2 class="cta-banner__title">
-              Ready to <em>refine</em> your hydration?
-            </h2>
-            <p class="cta-banner__lede">
-              Whether you're stocking your office, planning an event, or exploring a wholesale
-              partnership — we'd love to hear from you.
-            </p>
-            <div class="cta-banner__actions">
-              <a href="contact.html" class="btn btn--primary btn--lg ripple magnetic" data-cursor="link">
-                <span>Place an order</span>
-                <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-              <a href="tel:+2348141738501" class="btn btn--ghost btn--lg ripple magnetic" data-cursor="link">
-                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-                <span>+234 814 173 8501</span>
-              </a>
-            </div>
+        <div class="cta-final__inner reveal" data-reveal>
+          <span class="eyebrow eyebrow--light reveal" data-reveal>
+            <span class="eyebrow__dot"></span>
+            Get In Touch
+          </span>
+          <h2 class="cta-final__title reveal" data-reveal data-reveal-delay="100">
+            Ready to <em>refine</em><br />your hydration?
+          </h2>
+          <p class="cta-final__lede reveal" data-reveal data-reveal-delay="200">
+            Whether you're stocking your office, planning an event or exploring a
+            wholesale partnership — we'd love to hear from you.
+          </p>
+
+          <div class="cta-final__btn-wrap reveal" data-reveal data-reveal-delay="300">
+            <a href="contact.html" class="btn-liquid btn-liquid--gold cta-final__btn">
+              <span>Order Now</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <span class="cta-final__drop" style="--offset:-32px;--delay:0s"   aria-hidden="true"></span>
+            <span class="cta-final__drop" style="--offset:0px;  --delay:0.18s" aria-hidden="true"></span>
+            <span class="cta-final__drop" style="--offset:32px; --delay:0.36s" aria-hidden="true"></span>
           </div>
         </div>
       </div>
@@ -669,14 +684,14 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
+  <!-- FOOTER — Lighter glass treatment + champagne dividers -->
+  <footer class="footer footer--liquid">
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
           <div class="footer__logo">
             <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
-              <defs><linearGradient id="footG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5DEFFF"/><stop offset="100%" stop-color="#00D4F5"/></linearGradient></defs>
+              <defs><linearGradient id="footG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7FD8F5"/><stop offset="100%" stop-color="#4FB8E0"/></linearGradient></defs>
               <path d="M16 2C16 2 4 14 4 22a12 12 0 0 0 24 0C28 14 16 2 16 2Z" fill="url(#footG)"/>
             </svg>
             <span>REYON</span>
@@ -711,11 +726,11 @@
       <div class="footer__bottom">
         <p>&copy; <span id="year">2026</span> Reyon Group. All rights reserved.</p>
         <p class="footer__credit">Fuel your lifestyle.</p>
-        <div class="footer__social">
-          <a href="https://instagram.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-cursor="link">
+        <div class="footer__social footer__social--pills">
+          <a href="https://instagram.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-cursor="link" class="glass">
             <svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor"/></svg>
           </a>
-          <a href="https://facebook.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-cursor="link">
+          <a href="https://facebook.com/reyonwater" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-cursor="link" class="glass">
             <svg viewBox="0 0 24 24" width="16" height="16"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v8h3v-8h2.5l.5-3H14V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg>
           </a>
         </div>

@@ -11,6 +11,44 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isFinePointer  = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
+  /* -------------------- PAGE TRANSITION — 400ms water-ripple wipe -------------------- */
+  if (!prefersReduced) {
+    const SAME_PAGE_RX = /^(#|mailto:|tel:|javascript:|sms:)/i;
+
+    document.addEventListener('click', (e) => {
+      // Only intercept primary clicks without modifier keys
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+      if (link.target && link.target !== '_self') return;
+      const href = link.getAttribute('href');
+      if (!href || SAME_PAGE_RX.test(href)) return;
+
+      // Resolve to absolute and skip cross-origin
+      let url;
+      try { url = new URL(href, location.href); } catch (_) { return; }
+      if (url.origin !== location.origin) return;
+      // Same path + same query (just different hash) → let the browser scroll
+      if (url.pathname === location.pathname && url.search === location.search) return;
+
+      e.preventDefault();
+
+      // Spawn the wipe overlay at click coordinates
+      const overlay = document.createElement('div');
+      overlay.className = 'page-transition';
+      overlay.style.setProperty('--x', e.clientX + 'px');
+      overlay.style.setProperty('--y', e.clientY + 'px');
+      document.body.appendChild(overlay);
+
+      // Force reflow → trigger animation
+      void overlay.offsetWidth;
+      overlay.classList.add('is-active');
+
+      // After wipe completes, navigate
+      setTimeout(() => { window.location.href = url.href; }, 380);
+    });
+  }
+
   /* -------------------- WOW MOMENT — choreography -------------------- */
   /* Inline script in <body> decided whether the wow runs (sets `.wow-running`).
      liquid.js orchestrates the remaining timing if it did. */
