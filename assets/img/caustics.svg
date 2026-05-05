@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="none">
+  <filter id="caustic">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="2" seed="3" />
+    <feColorMatrix values="0 0 0 0 0.5
+                           0 0 0 0 0.85
+                           0 0 0 0 1
+                           0 0 0 1 0" />
+  </filter>
+  <rect width="100%" height="100%" filter="url(#caustic)" />
+</svg>

@@ -1,0 +1,105 @@
+/* =========================================================
+   REYON · LIQUID PREMIUM — Design Tokens
+   ========================================================= */
+
+:root {
+  /* ---------- COLOR ---------- */
+  --ink:           #06090F;
+  --midnight:      #0B1626;
+  --abyss:         #11243D;
+  --glacier:       #4FB8E0;
+  --aqua-glow:     #7FD8F5;
+  --mist:          #D6ECF7;
+  --champagne:     #D9B57A;
+  --champagne-soft:#F0DCB3;
+  --ice:           #F4FAFD;
+  --mist-text:     #A8BDD1;
+  --glass-border:  rgba(255, 255, 255, 0.14);
+  --glass-fill:    rgba(255, 255, 255, 0.06);
+
+  /* Convenience text aliases */
+  --text:          var(--ice);
+  --text-soft:     var(--mist);
+  --text-muted:    var(--mist-text);
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+
+  /* Fluid scale (clamp) */
+  --type-display: clamp(3.5rem, 8vw, 7rem);
+  --type-h1:      clamp(2.5rem, 5vw, 4.5rem);
+  --type-h2:      clamp(2rem,  4vw, 3.5rem);
+  --type-h3:      clamp(1.5rem, 2.5vw, 2rem);
+  --type-h4:      clamp(1.2rem, 1.8vw, 1.5rem);
+  --type-body:    clamp(1rem, 1.05vw + 0.2rem, 1.125rem);
+  --type-small:   0.875rem;
+  --type-mono-stat: clamp(2.4rem, 5vw, 4rem);
+
+  /* Tracking / leading */
+  --lead-tight:  1.05;
+  --lead-snug:   1.25;
+  --lead-normal: 1.55;
+  --lead-loose:  1.75;
+  --tracking-tight:  -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide:    0.06em;
+  --tracking-mono:    0.02em;
+
+  /* ---------- SPACING (4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 128 / 192) ---------- */
+  --space-4:    4px;
+  --space-8:    8px;
+  --space-12:  12px;
+  --space-16:  16px;
+  --space-24:  24px;
+  --space-32:  32px;
+  --space-48:  48px;
+  --space-64:  64px;
+  --space-96:  96px;
+  --space-128:128px;
+  --space-192:192px;
+
+  /* ---------- RADII ---------- */
+  --radius-1:    12px;
+  --radius-2:    16px;
+  --radius-3:    24px;
+  --radius-pill: 999px;
+
+  /* ---------- MOTION ---------- */
+  --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:   cubic-bezier(0.6, 0, 0.85, 0.4);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast:   220ms;
+  --t-base:   400ms;
+  --t-slow:   700ms;
+  --t-ripple: 700ms;
+
+  /* ---------- ELEVATION ---------- */
+  /* Glass (per brief): outer drop + dual inset highlights */
+  --shadow-glass:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  --shadow-glass-lift:
+    0 16px 48px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+
+  /* Color glows — used on hover */
+  --shadow-glacier-glow:   0 18px 50px -12px rgba(79, 184, 224, 0.42);
+  --shadow-champagne-glow: 0 18px 50px -12px rgba(217, 181, 122, 0.45);
+  --shadow-aqua-pulse:     0 0 0 1px rgba(127, 216, 245, 0.35);
+
+  /* ---------- LAYOUT ---------- */
+  --container:  1280px;
+  --gutter:     var(--space-32);
+
+  /* ---------- Z-INDEX ---------- */
+  --z-bg:        -1;
+  --z-content:    1;
+  --z-overlay:   10;
+  --z-nav:       50;
+  --z-cursor:    90;
+  --z-modal:    100;
+}
