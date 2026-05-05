@@ -1394,42 +1394,42 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
 }
 .logotype {
   background: var(--ink);
-  padding: var(--space-32) 0 var(--space-16);
+  padding: 0;
   overflow: hidden;
+  position: relative;
 }
+/* Blend the image edges into surrounding ink — feathers any source-edge artifacts */
+.logotype::before,
+.logotype::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.logotype::before { top: 0;    background: linear-gradient(180deg, var(--ink) 0%, transparent 100%); }
+.logotype::after  { bottom: 0; background: linear-gradient(0deg,   var(--ink) 0%, transparent 100%); }
+
 .logotype__inner {
-  padding: 0 var(--space-32);
-  line-height: 0.8;
   text-align: center;
+  line-height: 0;
 }
-.logotype__text {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-style: normal;
-  font-size: clamp(5rem, 19vw, 18rem);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
-  background: linear-gradient(180deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(127, 216, 245, 0.85) 35%,
-    rgba(79, 184, 224, 0.55) 70%,
-    rgba(11, 22, 38, 0) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(127, 216, 245, 0.32);
-  filter:
-    drop-shadow(0 0 60px rgba(127, 216, 245, 0.55))
-    drop-shadow(0 0 24px rgba(255, 255, 255, 0.12));
+.logotype__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 1600px;
+  margin: 0 auto;
   user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 0 80px rgba(127, 216, 245, 0.18));
   will-change: transform;
-  white-space: nowrap;
-  max-width: 100%;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .logotype__text { filter: drop-shadow(0 0 40px rgba(127, 216, 245, 0.4)); }
+@media (max-width: 760px) {
+  .logotype::before,
+  .logotype::after { height: 40px; }
 }
 
 /* ============ FOOTER ============ */
