@@ -2477,7 +2477,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
 .liquid-cursor.is-active { opacity: 0.9; }
 .liquid-cursor.is-hover  { width: 36px; height: 36px; opacity: 0.55; }
 
-/* ===== HERO SLIDER — 3 slides crossfade ===== */
+/* ===== HERO SLIDER — 2-slide smooth crossfade ===== */
 .hero--slider .hero__slides {
   position: absolute;
   inset: 0;
@@ -2488,22 +2488,28 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
   inset: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 900ms;
+  transition:
+    opacity 1400ms cubic-bezier(0.65, 0, 0.35, 1),
+    visibility 0s linear 1400ms;
   pointer-events: none;
+  z-index: 0;
 }
 .hero--slider .hero__slide.is-active {
   opacity: 1;
   visibility: visible;
-  transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0s;
+  transition:
+    opacity 1400ms cubic-bezier(0.65, 0, 0.35, 1),
+    visibility 0s linear 0s;
   pointer-events: auto;
+  z-index: 1;
 }
-/* Subtle Ken Burns zoom on the active slide image */
+/* Slow Ken Burns — gentle, no jarring snap */
 .hero--slider .hero__slide.is-active .hero__image {
-  animation: heroKenBurns 12s ease-in-out forwards;
+  animation: heroKenBurns 16s ease-out forwards;
 }
 @keyframes heroKenBurns {
-  from { transform: scale(1.02); }
-  to   { transform: scale(1.08); }
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.06); }
 }
 
 /* Slider nav controls — bottom-right above credentials */
@@ -2620,17 +2626,58 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
     linear-gradient(180deg, transparent 50%, rgba(6, 9, 15, 0.55) 100%);
 }
 
-/* Watermark stripper — crops bottom-right corner where AI tools place sparkle logos */
-.no-watermark,
+/* =========================================================
+   Watermark stripper — aggressive corner crop + matching ink
+   gradient overlay so the AI sparkle is gone regardless of
+   image rendered size.
+   ========================================================= */
 .hero__image,
 .logotype__img,
 .product-card__media img,
 .process-stage__media img,
 .promise__img,
-.blog-card__media img {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 93%, 95.5% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 93%, 95.5% 100%, 0 100%);
+.blog-card__media img,
+.no-watermark {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%);
 }
+
+/* Pseudo-element corner mask — hides watermark with a triangular ink gradient */
+.hero__media,
+.logotype__inner,
+.product-card__media,
+.process-stage__media,
+.promise__media,
+.blog-card__media {
+  position: relative;
+  isolation: isolate;
+}
+.hero__media::after,
+.logotype__inner::after,
+.product-card__media::after,
+.process-stage__media::after,
+.promise__media::after,
+.blog-card__media::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14%;
+  aspect-ratio: 1 / 1;
+  max-width: 110px;
+  max-height: 110px;
+  background: radial-gradient(
+    ellipse at bottom right,
+    var(--ink) 0%,
+    var(--ink) 35%,
+    rgba(6, 9, 15, 0.6) 60%,
+    transparent 90%
+  );
+  z-index: 5;
+  pointer-events: none;
+}
+/* The promise image floats so its watermark moves with the float */
+.promise__media::after { display: none; } /* shield is centered + scaled, no fixed corner */
 
 /* Caustics overlay — turbulence at 6% */
 .hero__caustics {
