@@ -4232,3 +4232,611 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
   .btn-liquid { transition: none; }
   .nav.is-pulsing .nav__inner { animation: none !important; }
 }
+
+/* =========================================================
+   ============ PREMIUM LIGHT — global theme pivot ============
+   This block lives at the bottom of style.css so it cascades
+   over earlier dark-mode rules. Three sections stay dark as
+   editorial drama moments: HERO · PROCESS · WORDMARK.
+   Everything else flips to a light, airy, water-brand palette.
+   ========================================================= */
+
+/* ----- 1. Body + global text on light ----- */
+html, body { background: var(--canvas); }
+body { color: var(--text-ink); }
+::selection { background: var(--ocean); color: #fff; }
+
+/* ----- 2. Section background pivots ----- */
+.about-preview,
+.stats,
+.products-glass,
+.promise,
+.why-bento,
+.cta-final,
+.story,
+.locations,
+.contact,
+.contact-page,
+.products-page > .section,
+.page-hero,
+.related,
+.footer.footer--liquid {
+  background: var(--canvas);
+  color: var(--text-ink);
+}
+
+/* Soft mist bands for rhythm */
+.products-glass,
+.why-bento,
+.related {
+  background: linear-gradient(180deg, var(--canvas) 0%, var(--soft-mist) 50%, var(--canvas) 100%);
+}
+.promise {
+  background: linear-gradient(180deg, var(--canvas) 0%, var(--mist-bg) 100%);
+}
+.cta-final {
+  background: linear-gradient(180deg, var(--canvas) 0%, var(--soft-mist) 100%);
+}
+
+/* Page heroes (about, products, contact) — light editorial openers */
+.page-hero {
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 30%, rgba(127, 216, 245, 0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 30% 80%, rgba(217, 181, 122, 0.10) 0%, transparent 70%),
+    var(--canvas);
+}
+.page-hero__title { color: var(--text-ink); }
+.page-hero__title em {
+  background: linear-gradient(120deg, var(--ocean), var(--glacier));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: none;
+}
+.page-hero__lede { color: var(--text-on-light); }
+.page-hero__bg .hero__mesh { display: none; }
+.page-hero__bg .hero__grid {
+  background-image:
+    linear-gradient(rgba(11,22,38,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,22,38,.03) 1px, transparent 1px);
+}
+
+/* ----- 3. Light glass treatment for cards inside light sections ----- */
+.about-preview .glass,
+.stats .glass,
+.products-glass .glass,
+.promise .glass,
+.why-bento .glass,
+.cta-final .glass,
+.locations .glass,
+.contact .glass {
+  background: linear-gradient(135deg, var(--glass-light-fill) 0%, rgba(255,255,255,0.45) 100%);
+  border: 1px solid var(--glass-light-border);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 -1px 0 rgba(11, 22, 38, 0.04) inset,
+    0 12px 30px -10px rgba(11, 22, 38, 0.10);
+  color: var(--text-ink);
+}
+
+/* ----- 4. Section type colors ----- */
+.about-preview .section__title,
+.stats .section__title,
+.products-glass .section__title,
+.promise .section__title,
+.why-bento .section__title,
+.cta-final .cta-final__title,
+.locations .section__title,
+.contact .section__title,
+.story .section__title,
+.related .section__title { color: var(--text-ink); }
+
+.about-preview .section__title em,
+.stats .section__title em,
+.products-glass .section__title em,
+.promise .section__title em,
+.why-bento .section__title em,
+.cta-final .cta-final__title em,
+.locations .section__title em,
+.contact .section__title em,
+.story .section__title em,
+.related .section__title em {
+  background: linear-gradient(120deg, var(--ocean), var(--glacier));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-preview p,
+.about-preview .section__lede,
+.products-glass .section__lede,
+.promise__lede,
+.why-bento .section__lede,
+.cta-final__lede,
+.story p,
+.locations p,
+.locations__address,
+.contact__text,
+.related p { color: var(--text-on-light); }
+
+/* Eyebrows on light bg */
+body .about-preview .eyebrow,
+body .stats .eyebrow,
+body .products-glass .eyebrow,
+body .promise .eyebrow,
+body .why-bento .eyebrow,
+body .cta-final .eyebrow,
+body .locations .eyebrow,
+body .contact .eyebrow,
+body .story .eyebrow,
+body .page-hero .eyebrow,
+body .related .eyebrow {
+  background: rgba(0, 119, 182, 0.08);
+  border-color: rgba(0, 119, 182, 0.22);
+  color: var(--ocean);
+}
+body .page-hero .eyebrow--light,
+body .cta-final .eyebrow--light {
+  background: rgba(217, 181, 122, 0.12);
+  border-color: rgba(217, 181, 122, 0.32);
+  color: #8E6F2C;
+}
+body .about-preview .eyebrow__dot,
+body .stats .eyebrow__dot,
+body .products-glass .eyebrow__dot,
+body .promise .eyebrow__dot,
+body .why-bento .eyebrow__dot,
+body .locations .eyebrow__dot,
+body .contact .eyebrow__dot,
+body .story .eyebrow__dot,
+body .page-hero .eyebrow__dot,
+body .related .eyebrow__dot {
+  background: var(--ocean);
+  box-shadow: 0 0 0 4px rgba(0,119,182,.12), 0 0 12px rgba(0,119,182,.5);
+}
+
+/* ----- 5. Stats cards on light ----- */
+.stats .stat-card { padding: var(--space-32); }
+.stats .stat-card__icon { color: var(--ocean); }
+.stats .stat-card__num { color: var(--text-ink); }
+.stats .stat-card__suffix { color: var(--champagne); }
+.stats .stat-card__label { color: var(--text-on-light-2); }
+.stats .stat-card::after {
+  background: linear-gradient(120deg, transparent, rgba(0, 119, 182, 0.10), transparent);
+}
+
+/* ----- 6. Products on light ----- */
+.products-glass .product-card { color: var(--text-ink); }
+.products-glass .product-card__media {
+  background: linear-gradient(180deg, var(--mist-bg) 0%, var(--paper) 100%);
+}
+.products-glass .product-card__media-fallback {
+  background:
+    radial-gradient(ellipse 70% 70% at 50% 30%, rgba(0, 119, 182, 0.10), transparent 70%),
+    linear-gradient(180deg, var(--mist-bg) 0%, var(--paper) 100%);
+}
+.products-glass .product-card__volume {
+  color: var(--ocean);
+  opacity: 0.55;
+}
+.products-glass .product-card__index { color: var(--ocean); }
+.products-glass .product-card--featured .product-card__index { color: #8E6F2C; }
+.products-glass .product-card__name { color: var(--text-ink); }
+.products-glass .product-card__desc { color: var(--text-on-light); }
+.products-glass .product-card__link { color: var(--ocean); }
+.products-glass .product-card--featured .product-card__link { color: #8E6F2C; }
+
+.products-glass .product-card:hover {
+  border-color: rgba(0, 119, 182, 0.32);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 -1px 0 rgba(11, 22, 38, 0.04) inset,
+    0 24px 50px -16px rgba(0, 119, 182, 0.25);
+}
+.products-glass .product-card--featured {
+  border-color: rgba(217, 181, 122, 0.42);
+}
+.products-glass .product-card--featured:hover {
+  border-color: rgba(217, 181, 122, 0.7);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 -1px 0 rgba(11, 22, 38, 0.04) inset,
+    0 24px 50px -16px rgba(217, 181, 122, 0.40);
+}
+
+/* ----- 7. Promise on light ----- */
+.promise__bg {
+  background:
+    radial-gradient(ellipse 50% 50% at 30% 50%, rgba(0, 119, 182, 0.10), transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 30%, rgba(127, 216, 245, 0.18), transparent 70%);
+}
+.promise__halo {
+  background: radial-gradient(circle, rgba(0, 119, 182, 0.18) 0%, transparent 70%);
+}
+.promise__list li {
+  background: rgba(0, 119, 182, 0.04);
+  border-color: rgba(0, 119, 182, 0.16);
+  color: var(--text-on-light);
+}
+.promise__list svg { color: var(--ocean); }
+
+/* ----- 8. Why bento on light ----- */
+.why-bento::before {
+  background: radial-gradient(circle, rgba(0, 119, 182, 0.10), transparent 65%);
+}
+.why-bento .benefit-card { color: var(--text-ink); }
+.why-bento .benefit-card__icon {
+  background: rgba(0, 119, 182, 0.08);
+  border-color: rgba(0, 119, 182, 0.22);
+  color: var(--ocean);
+}
+.why-bento .benefit-card--lg .benefit-card__icon {
+  background: rgba(217, 181, 122, 0.12);
+  border-color: rgba(217, 181, 122, 0.42);
+  color: var(--champagne);
+}
+.why-bento .benefit-card--lg .benefit-card__title em {
+  background: linear-gradient(120deg, var(--champagne) 0%, #8E6F2C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.why-bento .benefit-card__num { color: var(--ocean); }
+.why-bento .benefit-card--lg .benefit-card__num { color: #8E6F2C; }
+.why-bento .benefit-card__num::before {
+  background: linear-gradient(90deg, var(--ocean), transparent);
+}
+.why-bento .benefit-card--lg .benefit-card__num::before {
+  background: linear-gradient(90deg, var(--champagne), transparent);
+}
+.why-bento .benefit-card__title { color: var(--text-ink); }
+.why-bento .benefit-card__desc { color: var(--text-on-light); }
+.why-bento .benefit-card--lg { border-color: rgba(217, 181, 122, 0.30); }
+
+/* ----- 9. CTA Final on light ----- */
+.cta-final__bg {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 30%, rgba(217, 181, 122, 0.20), transparent 70%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(127, 216, 245, 0.22), transparent 70%);
+}
+.cta-final__title { color: var(--text-ink); }
+.cta-final__title em {
+  background: linear-gradient(120deg, var(--champagne) 0%, #8E6F2C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.cta-final__lede { color: var(--text-on-light); }
+
+/* ----- 10. Story (about page) on light ----- */
+.story__content p { color: var(--text-on-light); }
+.story__content { color: var(--text-ink); }
+.story__pillars .pillar { background: rgba(255, 255, 255, 0.6); border-color: var(--line-light); color: var(--text-ink); }
+.story__pillars .pillar h3 { color: var(--text-ink); }
+.story__pillars .pillar p { color: var(--text-on-light); }
+.story__pillars .pillar__num { color: var(--ocean); }
+
+/* ----- 11. Locations (about + contact) on light ----- */
+.locations .location {
+  background: var(--paper);
+  border-color: var(--line-light);
+  color: var(--text-ink);
+}
+.locations .location:hover {
+  border-color: rgba(0, 119, 182, 0.28);
+  box-shadow: 0 24px 50px -16px rgba(0, 119, 182, 0.20);
+}
+.locations .location::before {
+  background: radial-gradient(circle, rgba(0, 119, 182, 0.16), transparent 70%);
+}
+.locations .location__head h3 { color: var(--text-ink); }
+.locations .location__badge {
+  background: rgba(0, 119, 182, 0.08);
+  border-color: rgba(0, 119, 182, 0.22);
+  color: var(--ocean);
+}
+.locations .location__address { color: var(--text-on-light); }
+.locations .location__row { color: var(--text-on-light); }
+.locations .location__row:hover { color: var(--text-ink); }
+.locations .location__row svg { color: var(--ocean); }
+.locations .location__btn {
+  background: rgba(0, 119, 182, 0.08);
+  border-color: rgba(0, 119, 182, 0.22);
+  color: var(--ocean);
+}
+.locations .location__btn:hover { background: var(--ocean); color: #fff; border-color: var(--ocean); }
+
+/* ----- 12. Contact form on light ----- */
+.contact__inner { color: var(--text-ink); }
+.contact__form {
+  background: var(--paper);
+  border-color: var(--line-light);
+  box-shadow: 0 24px 50px -20px rgba(11, 22, 38, 0.10);
+}
+.contact__form::before {
+  background: linear-gradient(90deg, transparent, rgba(0, 119, 182, 0.4), transparent);
+}
+.contact .field input,
+.contact .field textarea,
+.contact .field select {
+  border-bottom: 1px solid rgba(11, 22, 38, 0.18);
+  color: var(--text-ink);
+}
+.contact .field label { color: var(--text-on-light); }
+.contact .field input:focus + label,
+.contact .field input:not(:placeholder-shown) + label,
+.contact .field textarea:focus + label,
+.contact .field textarea:not(:placeholder-shown) + label,
+.contact .field select:focus + label,
+.contact .field select:valid + label { color: var(--ocean); }
+.contact .field__line { background: linear-gradient(90deg, var(--ocean), var(--glacier)); }
+.contact .field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230077B6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.contact .field select option { background: var(--paper); color: var(--text-ink); }
+.contact__success {
+  background: rgba(0, 119, 182, 0.08);
+  border-color: rgba(0, 119, 182, 0.25);
+  color: var(--ocean);
+}
+
+.contact__chip {
+  background: var(--paper);
+  border-color: var(--line-light);
+  color: var(--text-ink);
+}
+.contact__chip:hover { background: rgba(0, 119, 182, 0.05); border-color: rgba(0, 119, 182, 0.25); }
+.contact__chip-icon {
+  background: rgba(0, 119, 182, 0.08);
+  color: var(--ocean);
+  box-shadow: none;
+}
+.contact__chip small { color: var(--text-on-light-2); }
+.contact__chip strong { color: var(--text-ink); }
+
+.social-link {
+  background: var(--paper);
+  border-color: var(--line-light);
+  color: var(--ocean);
+}
+.social-link:hover { background: var(--ocean); color: #fff; border-color: var(--ocean); }
+
+.contact-page__hours {
+  background: var(--paper);
+  border-color: var(--line-light);
+}
+.hour-row small { color: var(--text-on-light-2); }
+.hour-row strong { color: var(--text-ink); }
+
+/* ----- 13. Products page (other pages too) ----- */
+.products-page .product-detail { border-bottom-color: var(--line-light); }
+.products-page .product-detail__media {
+  background:
+    radial-gradient(ellipse 70% 80% at 50% 30%, rgba(0, 119, 182, 0.10), transparent 70%),
+    var(--paper);
+  border-color: var(--line-light);
+}
+.products-page .product-detail__index { color: var(--ocean); }
+.products-page .product-detail__name { color: var(--text-ink); }
+.products-page .product-detail__name em {
+  background: linear-gradient(120deg, var(--ocean), var(--glacier));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.products-page .product-detail__desc { color: var(--text-on-light); }
+.products-page .product-detail__features div {
+  background: rgba(0, 119, 182, 0.04);
+  border-color: rgba(0, 119, 182, 0.16);
+}
+.products-page .product-detail__features svg { color: var(--ocean); }
+.products-page .product-detail__features small { color: var(--text-on-light-2); }
+.products-page .product-detail__features strong { color: var(--text-ink); }
+
+/* ----- 14. About preview KPIs ----- */
+.about-preview__stats {
+  background: var(--paper);
+  border-color: var(--line-light);
+}
+.about-preview .kpi__num { color: var(--text-ink); }
+.about-preview .kpi__suffix { color: var(--ocean); }
+.about-preview .kpi__label { color: var(--text-on-light-2); }
+
+/* ----- 15. Footer on light ----- */
+.footer.footer--liquid {
+  background: linear-gradient(180deg, var(--canvas) 0%, var(--mist-bg) 100%);
+  color: var(--text-on-light);
+}
+.footer.footer--liquid::before {
+  background: linear-gradient(90deg, transparent 0%, rgba(217, 181, 122, 0.42) 50%, transparent 100%);
+}
+.footer.footer--liquid .footer__top::after {
+  background: linear-gradient(90deg, transparent 0%, rgba(217, 181, 122, 0.28) 50%, transparent 100%);
+}
+.footer.footer--liquid .footer__nav::before,
+.footer.footer--liquid .footer__nav::after {
+  background: linear-gradient(180deg, transparent 0%, rgba(217, 181, 122, 0.28) 30%, rgba(217, 181, 122, 0.28) 70%, transparent 100%);
+}
+.footer.footer--liquid .footer__brand p { color: var(--text-on-light); }
+.footer.footer--liquid .footer__col h5 { color: #8E6F2C; }
+.footer.footer--liquid .footer__col a { color: var(--text-on-light); }
+.footer.footer--liquid .footer__col a:hover { color: var(--text-ink); }
+.footer.footer--liquid .footer__bottom {
+  color: var(--text-on-light-2);
+  border-top-color: rgba(11, 22, 38, 0.08);
+}
+.footer.footer--liquid .footer__credit { color: var(--text-on-light); }
+.footer__social--pills a {
+  background: var(--paper);
+  border-color: var(--line-light);
+  color: var(--ocean) !important;
+}
+.footer__social--pills a:hover {
+  color: var(--champagne) !important;
+  border-color: rgba(217, 181, 122, 0.4) !important;
+  background: var(--paper);
+}
+
+/* ----- 16. Nav on light pages — keep glass but invert text ----- */
+.nav__inner {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.45) 100%);
+  border-color: var(--line-light);
+  box-shadow: 0 8px 28px -12px rgba(11, 22, 38, 0.18),
+              inset 0 1px 0 rgba(255, 255, 255, 0.95),
+              inset 0 -1px 0 rgba(11, 22, 38, 0.04);
+}
+.nav.is-scrolled .nav__inner {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  border-color: rgba(11, 22, 38, 0.12);
+}
+.nav__brand { color: var(--text-ink); }
+.nav__link { color: var(--text-on-light); }
+.nav__link:hover { color: var(--text-ink); background: rgba(0, 119, 182, 0.06); }
+.nav__link.is-active { color: var(--ocean); background: rgba(0, 119, 182, 0.10); }
+.nav__toggle span { background: var(--text-ink); }
+.nav.is-open .nav__menu {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, var(--mist-bg) 100%);
+}
+.nav.is-open .nav__link {
+  color: var(--text-ink);
+  border-bottom-color: rgba(11, 22, 38, 0.08);
+}
+.nav.is-open .nav__link.is-active { color: var(--ocean); }
+
+/* Adjust the scroll-stop pulse for light bg */
+@keyframes navAquaPulse {
+  0% {
+    border-color: var(--glass-light-border);
+    box-shadow: 0 8px 28px -12px rgba(11, 22, 38, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95),
+                0 0 0 0 rgba(0, 119, 182, 0);
+  }
+  22% {
+    border-color: rgba(0, 119, 182, 0.55);
+    box-shadow: 0 8px 28px -12px rgba(11, 22, 38, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95),
+                0 0 28px 4px rgba(0, 119, 182, 0.30);
+  }
+  100% {
+    border-color: var(--glass-light-border);
+    box-shadow: 0 8px 28px -12px rgba(11, 22, 38, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95),
+                0 0 0 0 rgba(0, 119, 182, 0);
+  }
+}
+
+/* ----- 17. .btn-liquid (glacier variant) on light pages — keep readable ----- */
+.cta-final .btn-liquid:not(.btn-liquid--gold),
+.about-preview .btn-liquid:not(.btn-liquid--gold),
+.promise .btn-liquid:not(.btn-liquid--gold),
+.contact .btn-liquid:not(.btn-liquid--gold),
+.locations .btn-liquid:not(.btn-liquid--gold),
+.products-glass .btn-liquid:not(.btn-liquid--gold) {
+  color: var(--ocean);
+  background: linear-gradient(180deg, rgba(0, 119, 182, 0.08) 0%, rgba(0, 119, 182, 0.02) 100%);
+  border-color: rgba(0, 119, 182, 0.25);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 8px 22px -12px rgba(0, 119, 182, 0.30);
+}
+.cta-final .btn-liquid:not(.btn-liquid--gold):hover,
+.about-preview .btn-liquid:not(.btn-liquid--gold):hover,
+.promise .btn-liquid:not(.btn-liquid--gold):hover,
+.contact .btn-liquid:not(.btn-liquid--gold):hover,
+.locations .btn-liquid:not(.btn-liquid--gold):hover,
+.products-glass .btn-liquid:not(.btn-liquid--gold):hover {
+  border-color: rgba(0, 119, 182, 0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 14px 32px -10px rgba(0, 119, 182, 0.40);
+}
+
+/* ----- 18. Sections that stay DARK (drama moments) ----- */
+/* Hero (slider) — keeps dark-on-image */
+.hero--liquid { background: var(--ink); color: var(--ice); }
+.hero__title { color: var(--ice); }
+.hero__lede { color: var(--mist); }
+.hero__credentials { color: var(--ice); border-color: var(--glass-border); }
+.hero__credentials::before { display: none; }
+
+/* Process — stays dark */
+.process-flow { background: var(--ink); color: var(--ice); }
+.process-flow .section__title { color: var(--ice); }
+.process-flow .section__title em {
+  background: linear-gradient(120deg, var(--aqua-glow), var(--glacier));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.process-flow .section__lede { color: var(--mist); }
+.process-flow .eyebrow {
+  background: rgba(127, 216, 245, 0.08);
+  border-color: rgba(127, 216, 245, 0.22);
+  color: var(--glacier);
+}
+.process-flow .eyebrow__dot {
+  background: var(--glacier);
+  box-shadow: 0 0 0 4px rgba(127, 216, 245, 0.14), 0 0 12px var(--glacier);
+}
+.process-flow .process-stage {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-color: var(--glass-border);
+  color: var(--ice);
+}
+.process-flow .process-stage__title { color: var(--ice); }
+.process-flow .process-stage__desc { color: var(--mist); }
+
+/* Wordmark — stays dark */
+.logotype { background: var(--ink); }
+
+/* ----- 19. Tighten loader bg (rarely visible but fixes flash) ----- */
+.loader { background: var(--canvas); }
+
+/* ----- 20. Article (blog post body, if used) ----- */
+.article { color: var(--text-ink); }
+.article p, .article ul, .article ol { color: var(--text-on-light); }
+.article p strong { color: var(--text-ink); }
+.article h2, .article h3 { color: var(--text-ink); }
+.article blockquote {
+  background: linear-gradient(90deg, rgba(0, 119, 182, 0.06), transparent);
+  border-left-color: var(--ocean);
+  color: var(--text-ink);
+}
+.article a { color: var(--ocean); border-bottom-color: rgba(0, 119, 182, 0.4); }
+.article hr { background: var(--line-light); }
+.article-meta { color: var(--text-on-light-2); }
+.article-meta__cat {
+  background: rgba(0, 119, 182, 0.08);
+  border-color: rgba(0, 119, 182, 0.22);
+  color: var(--ocean);
+}
+.blog-card {
+  background: var(--paper);
+  border-color: var(--line-light);
+  color: var(--text-ink);
+}
+.blog-card:hover { border-color: rgba(0, 119, 182, 0.32); }
+.blog-card__title { color: var(--text-ink); }
+.blog-card__excerpt { color: var(--text-on-light); }
+.blog-card__meta { color: var(--text-on-light-2); }
+.blog-card__cat {
+  background: rgba(0, 119, 182, 0.08);
+  border-color: rgba(0, 119, 182, 0.22);
+  color: var(--ocean);
+}
+.blog-card__more { color: var(--ocean); }
+
+/* ----- 21. Back-to-top button on light ----- */
+.back-to-top {
+  background: var(--paper);
+  border-color: var(--line-light);
+  color: var(--ocean);
+}
+.back-to-top:hover { background: var(--ocean); color: #fff; border-color: var(--ocean); }
+
+/* ----- 22. Liquid cursor — invert blend on light ----- */
+.liquid-cursor {
+  background: var(--ocean);
+  box-shadow: 0 0 12px var(--ocean), 0 0 32px rgba(0, 119, 182, 0.45);
+  mix-blend-mode: multiply;
+}

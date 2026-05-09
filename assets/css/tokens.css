@@ -17,7 +17,21 @@
   --glass-border:  rgba(255, 255, 255, 0.14);
   --glass-fill:    rgba(255, 255, 255, 0.06);
 
-  /* Convenience text aliases */
+  /* ---------- PREMIUM LIGHT theme tokens ---------- */
+  --canvas:        #FAFCFE;     /* page background */
+  --paper:         #FFFFFF;     /* card surface (most opaque) */
+  --mist-bg:       #E8F4FA;     /* mist-tinted section bg */
+  --soft-mist:     #F2F8FB;     /* between canvas and mist-bg */
+  --ocean:         #0077B6;     /* deep accent on light */
+  --text-ink:      #0B1626;     /* primary text on light */
+  --text-on-light: #3D4A56;     /* secondary text on light */
+  --text-on-light-2:#6B7A87;    /* tertiary text on light */
+  --line-light:    rgba(11, 22, 38, 0.08);
+  --line-light-2:  rgba(11, 22, 38, 0.14);
+  --glass-light-fill: rgba(255, 255, 255, 0.7);
+  --glass-light-border: rgba(11, 22, 38, 0.08);
+
+  /* Convenience text aliases (still default to dark-context values) */
   --text:          var(--ice);
   --text-soft:     var(--mist);
   --text-muted:    var(--mist-text);
