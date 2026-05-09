@@ -4834,6 +4834,48 @@ body .related .eyebrow__dot {
 }
 .back-to-top:hover { background: var(--ocean); color: #fff; border-color: var(--ocean); }
 
+/* ----- 21b. Poppins refinements (Poppins reads sharpest light at display sizes) ----- */
+.hero__title,
+.section__title,
+.page-hero__title,
+.cta-final__title,
+.promise .section__title,
+.process-flow .section__title {
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+.hero__title em,
+.section__title em,
+.page-hero__title em,
+.cta-final__title em,
+.process-flow .section__title em {
+  font-weight: 600;
+  font-style: italic;
+}
+.benefit-card__title,
+.process-stage__title,
+.product-card__name,
+.product-detail__name,
+.location__head h3,
+.pillar h3 {
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+.eyebrow,
+.benefit-card__num,
+.process-stage__num,
+.product-card__index,
+.product-detail__index,
+.stat-card__label,
+.location__badge {
+  font-weight: 500;
+  letter-spacing: 0.14em;
+}
+body { font-weight: 400; }
+.btn-liquid, .nav__link, .nav__brand { font-weight: 500; letter-spacing: 0.005em; }
+.nav__brand { letter-spacing: 0.18em; }
+.btn-liquid--gold { font-weight: 600; }
+
 /* ----- 22. Liquid cursor — invert blend on light ----- */
 .liquid-cursor {
   background: var(--ocean);
@@ -4873,12 +4915,10 @@ body .related .eyebrow__dot {
 .hero__overlay {
   background: linear-gradient(105deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.35) 35%, transparent 65%);
 }
-/* Soften and integrate the dark-background hero image into the bright sky.
-   filter brightness lifts the dark navy; multiply blend lets the sky show
-   through where the image is darkest. */
+/* Hero image renders cleanly — new images are already bright on light bg */
 .hero__image {
-  filter: brightness(1.55) contrast(0.9) saturate(1.05);
-  mix-blend-mode: multiply;
+  filter: none;
+  mix-blend-mode: normal;
 }
 .hero__title { color: var(--text-ink); text-shadow: 0 1px 8px rgba(255, 255, 255, 0.8); }
 .hero__title em {
@@ -4979,10 +5019,10 @@ body .related .eyebrow__dot {
     0 24px 50px -16px rgba(0, 119, 182, 0.30);
 }
 .process-flow .process-stage__media { background: linear-gradient(135deg, var(--mist-bg), var(--paper)); }
-/* Lift dark process images into the bright cards */
+/* Process images now bright on light bg — no blend-mode hack needed */
 .process-flow .process-stage__media img {
-  filter: brightness(1.45) contrast(0.95) saturate(1.05);
-  mix-blend-mode: multiply;
+  filter: none;
+  mix-blend-mode: normal;
 }
 .process-flow .process-stage__title { color: var(--text-ink); }
 .process-flow .process-stage__title em {
@@ -5005,10 +5045,10 @@ body .related .eyebrow__dot {
 }
 .logotype::before { background: linear-gradient(180deg, var(--sky-2) 0%, transparent 100%); }
 .logotype::after  { background: linear-gradient(0deg,   var(--sky-2) 0%, transparent 100%); }
-/* Lift the dark-bg wordmark image to read on light */
+/* Wordmark image now native bright — no blend-mode hack needed */
 .logotype__img {
-  filter: brightness(1.6) contrast(0.85) saturate(1.05);
-  mix-blend-mode: multiply;
+  filter: none;
+  mix-blend-mode: normal;
 }
 
 /* ===== ABOUT preview hero image (if any) — bright ===== */
