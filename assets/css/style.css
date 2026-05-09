@@ -2486,6 +2486,10 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
 .hero--slider .hero__slide {
   position: absolute;
   inset: 0;
+  display: flex;
+  align-items: center;
+  /* respect the section's top/bottom padding so content sits below the nav and above the credentials pill */
+  padding: var(--space-128) 0 var(--space-96);
   opacity: 0;
   visibility: hidden;
   transition:
@@ -2503,6 +2507,9 @@ input, textarea, select { font-family: inherit; font-size: inherit; color: inher
   pointer-events: auto;
   z-index: 1;
 }
+/* Slider parent now provides the layout box; the section itself doesn't need its own padding */
+.hero--liquid.hero--slider { padding: 0; }
+.hero--slider .hero__content { width: 100%; }
 /* Slow Ken Burns — gentle, no jarring snap */
 .hero--slider .hero__slide.is-active .hero__image {
   animation: heroKenBurns 16s ease-out forwards;
