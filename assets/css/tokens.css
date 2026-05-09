@@ -7,9 +7,9 @@
   --ink:           #06090F;
   --midnight:      #0B1626;
   --abyss:         #11243D;
-  --glacier:       #3FB7C2;
-  --aqua-glow:     #5DD4DC;
-  --mist:          #DCEFF1;
+  --glacier:       #4FA8DC;
+  --aqua-glow:     #86C8E5;
+  --mist:          #DCE9F4;
   --champagne:     #D9B57A;
   --champagne-soft:#F0DCB3;
   --ice:           #F4FAFD;
@@ -18,11 +18,11 @@
   --glass-fill:    rgba(255, 255, 255, 0.06);
 
   /* ---------- PREMIUM LIGHT theme tokens ---------- */
-  --canvas:        #FAFCFE;     /* page background */
+  --canvas:        #FAFAFA;     /* page background — warm soft white */
   --paper:         #FFFFFF;     /* card surface (most opaque) */
   --mist-bg:       #E8F4FA;     /* mist-tinted section bg */
   --soft-mist:     #F2F8FB;     /* between canvas and mist-bg */
-  --ocean:         #28B5C5;     /* GIVN-style teal-cyan brand accent */
+  --ocean:         #1481C4;     /* Brand blue — vibrant water-brand */
   --text-ink:      #0B1626;     /* primary text on light */
   --text-on-light: #3D4A56;     /* secondary text on light */
   --text-on-light-2:#6B7A87;    /* tertiary text on light */
@@ -101,7 +101,7 @@
     inset 0 -1px 0 rgba(255, 255, 255, 0.05);
 
   /* Color glows — used on hover */
-  --shadow-glacier-glow:   0 18px 50px -12px rgba(63, 183, 194, 0.45);
+  --shadow-glacier-glow:   0 18px 50px -12px rgba(20, 129, 196, 0.42);
   --shadow-champagne-glow: 0 18px 50px -12px rgba(217, 181, 122, 0.45);
   --shadow-aqua-pulse:     0 0 0 1px rgba(127, 216, 245, 0.35);
 
