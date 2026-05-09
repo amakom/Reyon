@@ -5096,22 +5096,53 @@ body { color: var(--text-dark); }
     var(--white);
 }
 
-/* HERO — image full-bleed; headline pushed left of centered container */
+/* HERO — image full-bleed; headline sits in the container's natural left zone */
 .hero--liquid { background: var(--white); }
 .hero__overlay { background: linear-gradient(95deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.25) 24%, transparent 50%); }
 .hero__caustics { display: none; }
-.hero--slider .hero__slide .container.hero__content,
-.hero .container.hero__content {
-  max-width: none !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding-left: clamp(24px, 5vw, 80px) !important;
-  padding-right: 0 !important;
+
+/* Title / lede / CTAs constrained so they never run into the bottle on the right */
+.hero__title, .hero__lede, .hero__cta { max-width: min(620px, 100%); }
+
+/* === RESPONSIVE — hero behaves correctly at every breakpoint === */
+/* Tablet & smaller: image as a backdrop, content gets its own panel above */
+@media (max-width: 880px) {
+  .hero--liquid {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+  .hero--slider .hero__slide {
+    padding: clamp(96px, 16vw, 140px) 0 clamp(40px, 8vw, 96px) !important;
+    align-items: flex-start !important;
+  }
+  .hero__media { z-index: 0; }
+  .hero__image { object-position: 70% center; }
+  .hero__overlay {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.55) 40%, rgba(255, 255, 255, 0.15) 80%, transparent 100%) !important;
+  }
+  .hero__content { position: relative; z-index: 2; }
+  .hero__title { font-size: clamp(2.6rem, 9vw, 4.2rem) !important; }
+  .hero__lede { font-size: 1rem !important; max-width: 100%; }
+  .hero__cta { gap: var(--space-12) !important; flex-wrap: wrap; }
+  .hero__cta .btn-liquid { flex: 1 1 auto; min-width: 140px; padding: var(--space-12) var(--space-24) !important; font-size: 0.86rem !important; }
+  .hero__credentials {
+    bottom: var(--space-16) !important;
+    left: var(--space-16) !important;
+    right: var(--space-16) !important;
+    justify-content: center !important;
+    font-size: 0.7rem !important;
+    padding: var(--space-8) var(--space-16) !important;
+    flex-wrap: wrap;
+  }
+  .hero__nav {
+    right: 50% !important;
+    transform: translateX(50%) !important;
+    bottom: calc(var(--space-64) + var(--space-12)) !important;
+  }
 }
-.hero__title, .hero__lede, .hero__cta { max-width: 620px; }
-@media (max-width: 760px) {
-  .hero--slider .hero__slide .container.hero__content,
-  .hero .container.hero__content { padding-left: var(--space-24) !important; }
+@media (max-width: 480px) {
+  .hero__title { font-size: clamp(2.4rem, 11vw, 3.4rem) !important; line-height: 1.05 !important; }
+  .hero__lede { font-size: 0.94rem !important; }
 }
 
 /* KILL GLASS — solid white surfaces site-wide */
