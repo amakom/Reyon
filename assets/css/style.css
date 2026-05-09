@@ -5055,3 +5055,297 @@ body { font-weight: 400; }
   .process-flow .process-stage__media img,
   .logotype__img { filter: none; mix-blend-mode: normal; }
 }
+
+/* =========================================================
+   ============ FINAL OVERRIDE — strict #1481C4 + #FAFAFA ============
+   Two-color rule. Brand blue #1481C4 + white #FAFAFA. Neutral
+   greys for text only. NO glass effects (backdrop blur removed).
+   Video section solid brand blue. Hero headline pushed left.
+   ========================================================= */
+
+:root {
+  --brand:        #1481C4;
+  --brand-soft:   rgba(20, 129, 196, 0.08);
+  --brand-soft-2: rgba(20, 129, 196, 0.18);
+  --brand-soft-3: rgba(20, 129, 196, 0.30);
+  --brand-deep:   #0E5F94;
+  --white:        #FAFAFA;
+  --pure-white:   #FFFFFF;
+  --text-dark:    #0B1626;
+  --text-grey:    #4A5560;
+  --text-grey-2:  #7A8590;
+  --line-grey:    rgba(11, 22, 38, 0.08);
+}
+
+html, body { background: var(--white); }
+body { color: var(--text-dark); }
+
+.about-preview, .stats, .products-glass, .promise, .why-bento, .cta-final,
+.story, .locations, .contact, .contact-page, .products-page > .section,
+.page-hero, .related, .footer.footer--liquid,
+.hero--liquid, .process-flow, .logotype, .blog-preview {
+  background: var(--white);
+  color: var(--text-dark);
+}
+.products-glass, .why-bento, .cta-final, .promise, .related {
+  background: linear-gradient(180deg, var(--white) 0%, rgba(20, 129, 196, 0.04) 100%);
+}
+.page-hero {
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 30%, rgba(20, 129, 196, 0.18) 0%, transparent 65%),
+    var(--white);
+}
+
+/* HERO — image full-bleed; headline pushed left of centered container */
+.hero--liquid { background: var(--white); }
+.hero__overlay { background: linear-gradient(95deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.25) 24%, transparent 50%); }
+.hero__caustics { display: none; }
+.hero--slider .hero__slide .container.hero__content,
+.hero .container.hero__content {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding-left: clamp(24px, 5vw, 80px) !important;
+  padding-right: 0 !important;
+}
+.hero__title, .hero__lede, .hero__cta { max-width: 620px; }
+@media (max-width: 760px) {
+  .hero--slider .hero__slide .container.hero__content,
+  .hero .container.hero__content { padding-left: var(--space-24) !important; }
+}
+
+/* KILL GLASS — solid white surfaces site-wide */
+.glass, .nav__inner, .hero__credentials, .hero__nav,
+.about-preview .glass, .stats .glass, .products-glass .glass,
+.promise .glass, .why-bento .glass, .cta-final .glass,
+.locations .glass, .contact .glass,
+.process-flow .process-stage,
+.benefit-card, .product-card, .stat-card, .pillar,
+.location, .contact__chip, .contact__form,
+.contact-page__hours, .blog-card, .footer__social--pills a,
+.social-link, .back-to-top {
+  background: var(--pure-white) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--line-grey) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset, 0 8px 24px -12px rgba(11, 22, 38, 0.08) !important;
+}
+.benefit-card--lg { border-color: rgba(20, 129, 196, 0.30) !important; }
+.about-preview .glass:hover, .stats .stat-card:hover,
+.products-glass .product-card:hover, .promise .glass:hover,
+.why-bento .benefit-card:hover, .cta-final .glass:hover,
+.locations .location:hover, .contact .contact__chip:hover,
+.process-flow .process-stage:hover, .blog-card:hover {
+  border-color: rgba(20, 129, 196, 0.40) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset,
+              0 24px 50px -16px rgba(20, 129, 196, 0.30) !important;
+}
+
+.nav__inner { background: rgba(250, 250, 250, 0.85) !important; border-color: var(--line-grey) !important; }
+.nav.is-scrolled .nav__inner { background: rgba(250, 250, 250, 0.95) !important; }
+.hero__credentials { background: var(--pure-white) !important; border-color: var(--line-grey) !important; color: var(--text-dark) !important; }
+.hero__credentials-dot { background: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
+.hero__nav { background: var(--pure-white) !important; border-color: var(--line-grey) !important; }
+.hero__nav-btn { background: var(--white) !important; border-color: var(--line-grey) !important; color: var(--brand) !important; }
+.hero__nav-btn:hover { background: var(--brand) !important; color: var(--white) !important; border-color: var(--brand) !important; }
+.hero__dot::before { background: var(--brand-soft-2); }
+.hero__dot.is-active::before { background: var(--brand); box-shadow: 0 0 12px var(--brand); }
+
+/* Eyebrows + accent dots — brand blue */
+body .eyebrow,
+body .about-preview .eyebrow, body .stats .eyebrow, body .products-glass .eyebrow,
+body .promise .eyebrow, body .why-bento .eyebrow, body .cta-final .eyebrow,
+body .locations .eyebrow, body .contact .eyebrow, body .story .eyebrow,
+body .page-hero .eyebrow, body .related .eyebrow, body .process-flow .eyebrow,
+body .video .eyebrow {
+  background: var(--brand-soft) !important;
+  border-color: var(--brand-soft-2) !important;
+  color: var(--brand) !important;
+}
+body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px var(--brand-soft), 0 0 12px var(--brand) !important; }
+
+/* Italic accent words — brand blue gradient */
+.hero__title em, .section__title em, .page-hero__title em,
+.cta-final__title em, .process-flow .section__title em,
+.product-card__name em, .product-detail__name em,
+.process-stage__title em, .benefit-card__title em {
+  background: linear-gradient(120deg, var(--brand) 0%, var(--brand-deep) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  filter: none !important;
+}
+
+/* Text colors */
+.hero__lede, .section__lede, .page-hero__lede, .cta-final__lede, .promise__lede,
+.about-preview p, .story p, .locations p, .location__address, .contact__text,
+.related p, .product-card__desc, .product-detail__desc, .benefit-card__desc,
+.process-stage__desc, .blog-card__excerpt, .pillar p, .process-flow .section__lede {
+  color: var(--text-grey) !important;
+}
+.hero__title, .section__title, .page-hero__title, .cta-final__title,
+.product-card__name, .product-detail__name, .benefit-card__title,
+.process-stage__title, .pillar h3, .location__head h3, .blog-card__title,
+.stat-card__num, .kpi__num, .contact__chip strong, .hour-row strong,
+.product-detail__features strong { color: var(--text-dark) !important; }
+.kpi__suffix, .stat-card__suffix, .stat-card__icon { color: var(--brand) !important; }
+.stat-card__label, .product-card__index, .product-detail__index,
+.benefit-card__num, .process-stage__num, .location__badge,
+.blog-card__cat, .blog-card__meta, .article-meta, .product-card__tag,
+.contact__chip small, .hour-row small,
+.product-detail__features small { color: var(--text-grey-2) !important; }
+
+/* Process accents */
+.process-flow__line { background: linear-gradient(180deg, transparent, var(--brand-soft-2) 6%, var(--brand-soft-2) 94%, transparent) !important; }
+.process-flow__line-flow {
+  background: linear-gradient(180deg, transparent, var(--brand) 28%, var(--brand-deep) 50%, var(--brand) 72%, transparent) !important;
+  filter: drop-shadow(0 0 6px var(--brand)) !important;
+}
+.process-stage__node { background: var(--brand) !important; box-shadow: 0 0 0 4px var(--brand-soft), 0 0 22px var(--brand) !important; }
+.process-stage__node-pulse { border-color: var(--brand-soft-3) !important; }
+.process-stage__media, .process-stage__media-fallback { background: linear-gradient(135deg, var(--white), var(--pure-white)) !important; }
+
+.promise__list li { background: var(--brand-soft) !important; border-color: var(--brand-soft-2) !important; color: var(--text-grey) !important; }
+.promise__list svg { color: var(--brand) !important; }
+.promise__halo { background: radial-gradient(circle, rgba(20, 129, 196, 0.18) 0%, transparent 70%) !important; }
+.promise__bg { background: radial-gradient(ellipse 50% 50% at 30% 50%, rgba(20, 129, 196, 0.10), transparent 70%), radial-gradient(ellipse 40% 60% at 80% 30%, rgba(20, 129, 196, 0.06), transparent 70%) !important; }
+
+.benefit-card__icon { background: var(--brand-soft) !important; border-color: var(--brand-soft-2) !important; color: var(--brand) !important; }
+.benefit-card--lg .benefit-card__icon { background: var(--brand-soft-2) !important; border-color: var(--brand-soft-3) !important; color: var(--brand) !important; }
+.benefit-card--lg .benefit-card__num { color: var(--brand) !important; }
+.benefit-card--lg .benefit-card__num::before { background: linear-gradient(90deg, var(--brand), transparent) !important; }
+.why-bento::before { background: radial-gradient(circle, rgba(20, 129, 196, 0.10), transparent 65%) !important; }
+
+.cta-final__bg { background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(20, 129, 196, 0.15), transparent 70%) !important; }
+.cta-final__drop { background: linear-gradient(180deg, var(--brand), var(--brand-deep)) !important; filter: drop-shadow(0 0 6px var(--brand)) !important; }
+
+.location__marker { background: var(--brand) !important; }
+.location__pulse { border-color: var(--brand-soft-3) !important; }
+.location__row svg { color: var(--brand) !important; }
+.location__btn { background: var(--brand-soft) !important; border-color: var(--brand-soft-2) !important; color: var(--brand) !important; }
+.location__btn:hover { background: var(--brand) !important; color: var(--pure-white) !important; }
+.location__badge { background: var(--brand-soft) !important; border-color: var(--brand-soft-2) !important; color: var(--brand) !important; }
+.locations .location::before { background: radial-gradient(circle, rgba(20, 129, 196, 0.12), transparent 70%) !important; }
+
+.contact .field input, .contact .field textarea, .contact .field select { border-bottom-color: var(--line-grey) !important; }
+.contact .field label { color: var(--text-grey-2) !important; }
+.contact .field input:focus + label, .contact .field input:not(:placeholder-shown) + label,
+.contact .field textarea:focus + label, .contact .field textarea:not(:placeholder-shown) + label,
+.contact .field select:focus + label, .contact .field select:valid + label { color: var(--brand) !important; }
+.contact .field__line { background: linear-gradient(90deg, var(--brand), var(--brand-deep)) !important; }
+.contact .field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%231481C4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important; }
+.contact__chip-icon { background: var(--brand-soft) !important; color: var(--brand) !important; box-shadow: none !important; }
+.social-link { color: var(--brand) !important; }
+.social-link:hover { background: var(--brand) !important; color: var(--pure-white) !important; border-color: var(--brand) !important; }
+.contact__success { background: var(--brand-soft) !important; border-color: var(--brand-soft-2) !important; color: var(--brand) !important; }
+
+.btn-liquid:not(.btn-liquid--gold) {
+  color: var(--brand) !important;
+  background: var(--pure-white) !important;
+  border-color: var(--brand-soft-3) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 8px 22px -12px rgba(20, 129, 196, 0.30) !important;
+}
+.btn-liquid:not(.btn-liquid--gold):hover {
+  background: var(--brand) !important;
+  color: var(--pure-white) !important;
+  border-color: var(--brand) !important;
+  box-shadow: 0 14px 32px -10px rgba(20, 129, 196, 0.50) !important;
+}
+
+.nav__brand { color: var(--text-dark) !important; }
+.nav__link { color: var(--text-grey) !important; }
+.nav__link:hover { color: var(--text-dark) !important; background: var(--brand-soft) !important; }
+.nav__link.is-active { color: var(--brand) !important; background: var(--brand-soft) !important; }
+
+.product-card__link { color: var(--brand) !important; }
+.product-card__index { color: var(--brand) !important; }
+.product-card__media, .product-card__media-fallback {
+  background: linear-gradient(180deg, var(--brand-soft) 0%, var(--pure-white) 100%) !important;
+}
+.product-card__volume { color: var(--brand) !important; }
+.products-page .product-detail__features div { background: var(--brand-soft) !important; border-color: var(--brand-soft-2) !important; }
+.products-page .product-detail__features svg { color: var(--brand) !important; }
+.products-page .product-detail__media { background: linear-gradient(135deg, var(--brand-soft), var(--pure-white)) !important; border-color: var(--brand-soft-2) !important; }
+.products-page .product-detail__index { color: var(--brand) !important; }
+
+.logotype { background: var(--white) !important; }
+.logotype::before { background: linear-gradient(180deg, var(--white) 0%, transparent 100%) !important; }
+.logotype::after { background: linear-gradient(0deg, var(--white) 0%, transparent 100%) !important; }
+.logotype__img { filter: none !important; mix-blend-mode: normal !important; }
+
+.story__pillars .pillar__num { color: var(--brand) !important; }
+.story__visual { background: var(--brand-soft) !important; border-color: var(--brand-soft-2) !important; }
+.story__visual svg { filter: none !important; mix-blend-mode: normal !important; }
+.page-hero__title em {
+  background: linear-gradient(120deg, var(--brand) 0%, var(--brand-deep) 100%) !important;
+  -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important;
+}
+
+@keyframes navAquaPulse {
+  0%   { border-color: var(--line-grey); box-shadow: 0 8px 28px -12px rgba(11, 22, 38, 0.18), 0 0 0 0 rgba(20, 129, 196, 0); }
+  22%  { border-color: rgba(20, 129, 196, 0.55); box-shadow: 0 8px 28px -12px rgba(11, 22, 38, 0.18), 0 0 28px 4px rgba(20, 129, 196, 0.30); }
+  100% { border-color: var(--line-grey); box-shadow: 0 8px 28px -12px rgba(11, 22, 38, 0.18), 0 0 0 0 rgba(20, 129, 196, 0); }
+}
+
+.liquid-cursor {
+  background: var(--brand) !important;
+  box-shadow: 0 0 12px var(--brand), 0 0 32px rgba(20, 129, 196, 0.45) !important;
+  mix-blend-mode: multiply;
+}
+
+/* ============ VIDEO SECTION — solid brand blue ============ */
+.video {
+  background: var(--brand) !important;
+  color: var(--pure-white) !important;
+  padding: clamp(80px, 10vw, 160px) 0 !important;
+}
+.video .section__title,
+.video .section__title em {
+  color: var(--pure-white) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  filter: none !important;
+}
+.video .section__lede { color: rgba(255, 255, 255, 0.9) !important; }
+.video .eyebrow {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  color: var(--pure-white) !important;
+}
+.video .eyebrow__dot {
+  background: var(--pure-white) !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18), 0 0 12px var(--pure-white) !important;
+}
+.video__player {
+  background: rgba(255, 255, 255, 0.10) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.4) !important;
+}
+.video__player:hover { background: rgba(255, 255, 255, 0.15) !important; border-color: rgba(255, 255, 255, 0.45) !important; }
+.video__visual { display: none; }
+.video__play { background: var(--pure-white) !important; color: var(--brand) !important; }
+.video__play:hover { background: var(--brand-deep) !important; color: var(--pure-white) !important; }
+.video__play-ring { border-color: rgba(255, 255, 255, 0.5) !important; }
+.video__caption,
+.video__title { color: var(--pure-white) !important; }
+.video__duration { background: rgba(0, 0, 0, 0.3) !important; color: var(--pure-white) !important; }
+
+/* Footer */
+.footer.footer--liquid { background: var(--white) !important; }
+.footer.footer--liquid::before { background: linear-gradient(90deg, transparent, rgba(20, 129, 196, 0.32) 50%, transparent) !important; }
+.footer.footer--liquid .footer__top::after { background: linear-gradient(90deg, transparent, rgba(20, 129, 196, 0.18) 50%, transparent) !important; }
+.footer.footer--liquid .footer__nav::before,
+.footer.footer--liquid .footer__nav::after { background: linear-gradient(180deg, transparent, rgba(20, 129, 196, 0.18) 30%, rgba(20, 129, 196, 0.18) 70%, transparent) !important; }
+.footer.footer--liquid .footer__col h5 { color: var(--brand) !important; }
+.footer.footer--liquid .footer__col a:hover { color: var(--brand) !important; }
+.footer.footer--liquid .footer__brand p { color: var(--text-grey) !important; }
+.footer__social--pills a { color: var(--brand) !important; }
+.footer__social--pills a:hover { color: var(--pure-white) !important; background: var(--brand) !important; border-color: var(--brand) !important; }
+
+/* Wow moment — bright */
+.wow-overlay { background: linear-gradient(180deg, var(--white) 0%, var(--brand-soft) 100%) !important; }
+.wow-overlay__bg { background: transparent !important; }
