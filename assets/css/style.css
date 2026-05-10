@@ -5442,6 +5442,128 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
 .wow-overlay__bg { background: transparent !important; }
 
 /* =========================================================
+   FINAL POLISH — sharp headline + clean mobile + sharp images
+   ========================================================= */
+
+/* 1. HERO HEADLINE — kill the residual text-shadow halo so it
+   reads as crisp as the About page hero (which has no shadow) */
+.hero__title,
+.hero__title em,
+.hero__lede {
+  text-shadow: none !important;
+}
+.hero__title em {
+  filter: none !important;
+}
+/* Force the heaviest Poppins weight to actually render */
+.hero__title {
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.0 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.hero__title em {
+  font-weight: 600 !important;
+  font-style: italic !important;
+}
+
+/* 2. IMAGES — ensure no residual filter survives anywhere; add
+   browser hint to prefer crisp rendering on scaled images */
+.hero__image,
+.process-stage__media img,
+.product-card__media img,
+.about-preview__img,
+.story__img,
+.promise__img,
+.page-hero__img,
+.logotype__img {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* For modern browsers: prefer high-quality scaling */
+  image-rendering: auto;
+}
+
+/* 3. MOBILE — clean alignment for hero on small viewports */
+@media (max-width: 760px) {
+  /* Hero slide: top-aligned with reasonable padding so headline
+     doesn't crash into the nav, lede has room, buttons fit */
+  .hero--slider .hero__slide {
+    padding: clamp(110px, 22vw, 140px) 0 clamp(140px, 22vw, 180px) !important;
+    align-items: flex-start !important;
+  }
+  /* Container override for mobile — proper 24px gutter */
+  .hero--slider .hero__slide .container.hero__content,
+  .hero .container.hero__content {
+    padding: 0 var(--space-24) !important;
+  }
+  /* Title: scale down properly + tight line-height */
+  .hero__title {
+    font-size: clamp(2.4rem, 10vw, 3.6rem) !important;
+    line-height: 1.04 !important;
+    margin-bottom: var(--space-16) !important;
+  }
+  .hero__lede {
+    font-size: 0.96rem !important;
+    line-height: 1.55 !important;
+    max-width: 100% !important;
+    margin-bottom: var(--space-24) !important;
+  }
+  /* Buttons: row layout, both flex 1 1 0 so they share equally */
+  .hero__cta {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-12) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .hero__cta .btn-liquid,
+  .hero__cta .btn-liquid--gold {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    padding: var(--space-12) var(--space-16) !important;
+    font-size: 0.84rem !important;
+    white-space: nowrap !important;
+  }
+  /* Credentials pill: compact center-row at the bottom */
+  .hero__credentials {
+    bottom: clamp(72px, 14vw, 96px) !important;
+    left: var(--space-16) !important;
+    right: var(--space-16) !important;
+    justify-content: center !important;
+    font-size: 0.7rem !important;
+    padding: var(--space-8) var(--space-16) !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-8) !important;
+  }
+  /* Slider nav: center-bottom on mobile */
+  .hero__nav {
+    right: 50% !important;
+    transform: translateX(50%) !important;
+    bottom: var(--space-16) !important;
+    padding: 6px 8px !important;
+  }
+  .hero__nav-btn {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .hero__dots { padding: 0 var(--space-8) !important; }
+}
+
+@media (max-width: 460px) {
+  .hero__title { font-size: clamp(2.2rem, 12vw, 2.8rem) !important; }
+  .hero__cta .btn-liquid,
+  .hero__cta .btn-liquid--gold {
+    font-size: 0.78rem !important;
+    padding: var(--space-12) var(--space-12) !important;
+  }
+}
+
+/* =========================================================
    ABOUT page-hero with full-bleed water image
    ========================================================= */
 .page-hero--image {
