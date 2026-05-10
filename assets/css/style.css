@@ -5429,3 +5429,153 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
 /* Wow moment — bright */
 .wow-overlay { background: linear-gradient(180deg, var(--white) 0%, var(--brand-soft) 100%) !important; }
 .wow-overlay__bg { background: transparent !important; }
+
+/* =========================================================
+   CTA BANNER (used on About + Products) — solid brand blue
+   plus extra force on .process-flow so it never renders dark
+   ========================================================= */
+
+.cta-banner {
+  background: var(--white) !important;
+  color: var(--text-dark) !important;
+  padding-top: 0 !important;
+}
+.cta-banner__inner {
+  background: var(--brand) !important;
+  border: 1px solid var(--brand-deep) !important;
+  color: var(--pure-white) !important;
+  border-radius: var(--radius-3) !important;
+  box-shadow: 0 24px 60px -20px rgba(20, 129, 196, 0.45) !important;
+  isolation: isolate;
+  overflow: hidden;
+}
+.cta-banner__bg {
+  background:
+    radial-gradient(ellipse 60% 80% at 0% 50%, rgba(255, 255, 255, 0.18), transparent 70%),
+    radial-gradient(ellipse 60% 80% at 100% 50%, rgba(255, 255, 255, 0.10), transparent 70%) !important;
+}
+.cta-banner__title {
+  color: var(--pure-white) !important;
+}
+.cta-banner__title em {
+  background: linear-gradient(120deg, var(--pure-white) 0%, rgba(255, 255, 255, 0.7) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  filter: none !important;
+  font-style: italic !important;
+}
+.cta-banner__lede {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+.cta-banner .eyebrow,
+.cta-banner .eyebrow--light {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.32) !important;
+  color: var(--pure-white) !important;
+}
+.cta-banner .eyebrow__dot {
+  background: var(--pure-white) !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.20), 0 0 12px var(--pure-white) !important;
+}
+
+/* Buttons inside the blue CTA banner */
+.cta-banner .btn--primary,
+.cta-banner .btn-liquid--gold {
+  background: var(--pure-white) !important;
+  color: var(--brand) !important;
+  border-color: var(--pure-white) !important;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.20) !important;
+}
+.cta-banner .btn--primary:hover,
+.cta-banner .btn-liquid--gold:hover {
+  background: var(--brand-deep) !important;
+  color: var(--pure-white) !important;
+  border-color: var(--brand-deep) !important;
+}
+.cta-banner .btn--ghost,
+.cta-banner .btn-liquid:not(.btn-liquid--gold) {
+  background: transparent !important;
+  color: var(--pure-white) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+.cta-banner .btn--ghost:hover,
+.cta-banner .btn-liquid:not(.btn-liquid--gold):hover {
+  background: rgba(255, 255, 255, 0.10) !important;
+  border-color: var(--pure-white) !important;
+  color: var(--pure-white) !important;
+}
+
+/* =========================================================
+   PROCESS FLOW (about page + home) — force light so the
+   dark navy v3 base never bleeds through
+   ========================================================= */
+
+.process-flow {
+  background: var(--white) !important;
+  color: var(--text-dark) !important;
+}
+.process-flow__bg {
+  display: none !important;
+}
+.process-flow .section__title { color: var(--text-dark) !important; }
+.process-flow .section__title em {
+  background: linear-gradient(120deg, var(--brand) 0%, var(--brand-deep) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+.process-flow .section__lede { color: var(--text-grey) !important; }
+
+/* =========================================================
+   PAGE HERO (about / products / contact) — force bright
+   so any leftover dark gradient is replaced
+   ========================================================= */
+
+.page-hero {
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 30%, rgba(20, 129, 196, 0.18) 0%, transparent 65%),
+    var(--white) !important;
+  color: var(--text-dark) !important;
+}
+.page-hero__title { color: var(--text-dark) !important; }
+.page-hero__title em {
+  background: linear-gradient(120deg, var(--brand) 0%, var(--brand-deep) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+.page-hero__lede { color: var(--text-grey) !important; }
+.page-hero__bg .hero__mesh { display: none !important; }
+.page-hero__bg .hero__grid {
+  background-image:
+    linear-gradient(rgba(20, 129, 196, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 129, 196, 0.04) 1px, transparent 1px) !important;
+}
+
+/* Old-style buttons on About + Products pages — repaint to brand */
+.btn--primary {
+  background: var(--brand) !important;
+  color: var(--pure-white) !important;
+  border-color: var(--brand) !important;
+  box-shadow: 0 8px 24px -8px rgba(20, 129, 196, 0.45) !important;
+}
+.btn--primary:hover {
+  background: var(--brand-deep) !important;
+  border-color: var(--brand-deep) !important;
+}
+.btn--ghost {
+  background: var(--pure-white) !important;
+  color: var(--brand) !important;
+  border: 1px solid var(--brand-soft-3) !important;
+  box-shadow: 0 8px 22px -12px rgba(20, 129, 196, 0.30) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.btn--ghost:hover {
+  background: var(--brand) !important;
+  color: var(--pure-white) !important;
+  border-color: var(--brand) !important;
+}
