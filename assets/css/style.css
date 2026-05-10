@@ -5307,8 +5307,22 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
 .logotype__img { filter: none !important; mix-blend-mode: normal !important; }
 
 .story__pillars .pillar__num { color: var(--brand) !important; }
-.story__visual { background: var(--brand-soft) !important; border-color: var(--brand-soft-2) !important; }
+.story__visual {
+  background: var(--brand-soft) !important;
+  border: 1px solid var(--brand-soft-2) !important;
+  border-radius: var(--radius-3) !important;
+  overflow: hidden !important;
+  position: relative !important;
+  aspect-ratio: 4 / 5 !important;
+}
 .story__visual svg { filter: none !important; mix-blend-mode: normal !important; }
+.story__img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
 .page-hero__title em {
   background: linear-gradient(120deg, var(--brand) 0%, var(--brand-deep) 100%) !important;
   -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important;
@@ -5365,17 +5379,52 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
 .video__title { color: var(--pure-white) !important; }
 .video__duration { background: rgba(0, 0, 0, 0.3) !important; color: var(--pure-white) !important; }
 
-/* Footer */
-.footer.footer--liquid { background: var(--white) !important; }
-.footer.footer--liquid::before { background: linear-gradient(90deg, transparent, rgba(20, 129, 196, 0.32) 50%, transparent) !important; }
-.footer.footer--liquid .footer__top::after { background: linear-gradient(90deg, transparent, rgba(20, 129, 196, 0.18) 50%, transparent) !important; }
+/* ============ FOOTER — solid brand blue ============ */
+.footer.footer--liquid {
+  background: var(--brand) !important;
+  color: var(--pure-white) !important;
+}
+.footer.footer--liquid::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35) 50%, transparent) !important;
+}
+.footer.footer--liquid .footer__top::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22) 50%, transparent) !important;
+}
 .footer.footer--liquid .footer__nav::before,
-.footer.footer--liquid .footer__nav::after { background: linear-gradient(180deg, transparent, rgba(20, 129, 196, 0.18) 30%, rgba(20, 129, 196, 0.18) 70%, transparent) !important; }
-.footer.footer--liquid .footer__col h5 { color: var(--brand) !important; }
-.footer.footer--liquid .footer__col a:hover { color: var(--brand) !important; }
-.footer.footer--liquid .footer__brand p { color: var(--text-grey) !important; }
-.footer__social--pills a { color: var(--brand) !important; }
-.footer__social--pills a:hover { color: var(--pure-white) !important; background: var(--brand) !important; border-color: var(--brand) !important; }
+.footer.footer--liquid .footer__nav::after {
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.22) 30%, rgba(255, 255, 255, 0.22) 70%, transparent) !important;
+}
+.footer.footer--liquid .footer__brand p { color: rgba(255, 255, 255, 0.85) !important; }
+.footer.footer--liquid .footer__brand .footer__logo { color: var(--pure-white) !important; }
+.footer.footer--liquid .footer__col h5 { color: var(--pure-white) !important; }
+.footer.footer--liquid .footer__col a {
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+.footer.footer--liquid .footer__col a:hover { color: var(--pure-white) !important; }
+.footer.footer--liquid .footer__bottom {
+  color: rgba(255, 255, 255, 0.75) !important;
+  border-top-color: rgba(255, 255, 255, 0.18) !important;
+}
+.footer.footer--liquid .footer__credit { color: rgba(255, 255, 255, 0.95) !important; }
+
+/* Footer brand logo: invert so it reads on blue */
+.footer.footer--liquid .footer__brand-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* Footer social pills on blue: white surface with brand-blue icon */
+.footer__social--pills a {
+  background: var(--pure-white) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: var(--brand) !important;
+  box-shadow: none !important;
+}
+.footer__social--pills a:hover {
+  background: var(--pure-white) !important;
+  color: var(--brand-deep) !important;
+  border-color: var(--pure-white) !important;
+  transform: translateY(-2px) !important;
+}
 
 /* Wow moment — bright */
 .wow-overlay { background: linear-gradient(180deg, var(--white) 0%, var(--brand-soft) 100%) !important; }
