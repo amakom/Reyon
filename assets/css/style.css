@@ -5442,6 +5442,75 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
 .wow-overlay__bg { background: transparent !important; }
 
 /* =========================================================
+   ABOUT PREVIEW — image on the right column (home page)
+   ========================================================= */
+.about-preview__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-3);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--brand-soft), var(--pure-white));
+  border: 1px solid var(--brand-soft-2);
+  box-shadow: 0 24px 50px -16px rgba(20, 129, 196, 0.15);
+}
+.about-preview__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+@media (max-width: 1080px) {
+  .about-preview__media { max-width: 480px; margin: 0 auto; aspect-ratio: 4 / 5; }
+}
+
+/* =========================================================
+   VIDEO eyebrow — force specificity over the universal
+   body .video .eyebrow rule above (which paints brand-on-brand
+   and made "SEE IT IN ACTION" disappear on the blue panel)
+   ========================================================= */
+body .video .eyebrow,
+.video .eyebrow {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border: 1px solid rgba(255, 255, 255, 0.40) !important;
+  color: var(--pure-white) !important;
+}
+body .video .eyebrow__dot,
+.video .eyebrow__dot {
+  background: var(--pure-white) !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.20), 0 0 12px var(--pure-white) !important;
+}
+
+/* Same fix for the .cta-banner blue panel — eyebrow was getting
+   clobbered by the same body-prefixed universal rule */
+body .cta-banner .eyebrow,
+.cta-banner .eyebrow,
+body .cta-banner .eyebrow--light,
+.cta-banner .eyebrow--light {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border: 1px solid rgba(255, 255, 255, 0.40) !important;
+  color: var(--pure-white) !important;
+}
+body .cta-banner .eyebrow__dot,
+.cta-banner .eyebrow__dot {
+  background: var(--pure-white) !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.20), 0 0 12px var(--pure-white) !important;
+}
+
+/* Same fix for the legacy .process blue section on About */
+body .process .eyebrow,
+.process .eyebrow {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border: 1px solid rgba(255, 255, 255, 0.40) !important;
+  color: var(--pure-white) !important;
+}
+body .process .eyebrow__dot,
+.process .eyebrow__dot {
+  background: var(--pure-white) !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.20), 0 0 12px var(--pure-white) !important;
+}
+
+/* =========================================================
    CTA BANNER (used on About + Products) — solid brand blue
    plus extra force on .process-flow so it never renders dark
    ========================================================= */
