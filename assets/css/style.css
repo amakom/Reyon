@@ -5096,10 +5096,21 @@ body { color: var(--text-dark); }
     var(--white);
 }
 
-/* HERO — image full-bleed; headline sits in the container's natural left zone */
+/* HERO — image full-bleed; headline sits at the SAME left position as
+   the page-hero on About / Products / Contact (i.e. at .container's
+   natural left edge: ~320px from viewport edge at 1920px) */
 .hero--liquid { background: var(--white); }
 .hero__overlay { background: linear-gradient(95deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.25) 24%, transparent 50%); }
 .hero__caustics { display: none; }
+
+/* Force hero__content to behave like a default .container (matches About) */
+.hero--slider .hero__slide .container.hero__content,
+.hero .container.hero__content {
+  max-width: var(--container) !important;
+  width: auto !important;
+  margin: 0 auto !important;
+  padding: 0 var(--space-32) !important;
+}
 
 /* Title / lede / CTAs constrained so they never run into the bottle on the right */
 .hero__title, .hero__lede, .hero__cta { max-width: min(620px, 100%); }
