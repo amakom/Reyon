@@ -5442,6 +5442,27 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
 .wow-overlay__bg { background: transparent !important; }
 
 /* =========================================================
+   PROMISE logo image — solid white card so the logo's
+   white background blends cleanly (no harsh edge)
+   ========================================================= */
+.promise__media {
+  background: var(--pure-white) !important;
+  border: 1px solid var(--brand-soft-2) !important;
+  border-radius: var(--radius-3) !important;
+  overflow: hidden !important;
+  box-shadow: 0 24px 60px -20px rgba(20, 129, 196, 0.15) !important;
+  padding: clamp(32px, 6vw, 64px) !important;
+}
+.promise__img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  filter: none !important;
+  animation: promiseFloat 7s ease-in-out infinite;
+}
+.promise__halo { display: none !important; }
+
+/* =========================================================
    ABOUT PREVIEW — image on the right column (home page)
    ========================================================= */
 .about-preview__media {
