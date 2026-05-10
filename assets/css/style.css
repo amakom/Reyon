@@ -5660,6 +5660,37 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
 }
 .promise__halo { display: none !important; }
 
+/* ============================================================
+   HERO — bottom-only dark vignette
+   Top stays bright. Bottom ~38% subtly darkens so the
+   credentials pill and slider nav pop, without changing
+   the brand vibe.
+   Painted inside .hero__media so it stays above the image
+   but below the slide content, slider nav, and credentials.
+   ============================================================ */
+.hero--liquid .hero__media { position: absolute; }
+.hero--liquid .hero__media::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 38%;
+  z-index: 2;            /* above .hero__image (0) and .hero__overlay (1), below content (z-index 2 outside this stacking ctx) */
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 22, 38, 0)        0%,
+    rgba(11, 22, 38, 0.10)    35%,
+    rgba(11, 22, 38, 0.28)    75%,
+    rgba(11, 22, 38, 0.42)   100%
+  );
+}
+/* Belt-and-braces: lift the slider nav + credentials pill above any
+   stacking ambiguity so they always sit on top of the vignette. */
+.hero--liquid .hero__nav,
+.hero--liquid .hero__credentials { z-index: 3; }
+
 /* =========================================================
    ABOUT PREVIEW — image on the right column (home page)
    ========================================================= */
