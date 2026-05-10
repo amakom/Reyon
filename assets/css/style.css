@@ -5555,6 +5555,67 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
     linear-gradient(90deg, rgba(20, 129, 196, 0.04) 1px, transparent 1px) !important;
 }
 
+/* =========================================================
+   LEGACY .process (about page) — solid brand blue moment
+   The about page uses the older v2 .process class, not the
+   home page's .process-flow. This was never repainted.
+   ========================================================= */
+
+.process {
+  background: var(--brand) !important;
+  color: var(--pure-white) !important;
+  padding: clamp(80px, 10vw, 160px) 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.process__bg { display: none !important; }
+
+/* Eyebrow + section head on blue */
+.process .eyebrow,
+.process .eyebrow--light {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.32) !important;
+  color: var(--pure-white) !important;
+}
+.process .eyebrow__dot {
+  background: var(--pure-white) !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.20), 0 0 12px var(--pure-white) !important;
+}
+.process .section__title { color: var(--pure-white) !important; }
+.process .section__title em {
+  background: linear-gradient(120deg, var(--pure-white) 0%, rgba(255, 255, 255, 0.7) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  filter: none !important;
+}
+.process .section__lede { color: rgba(255, 255, 255, 0.85) !important; }
+
+/* Connecting rail + animated water flow — white on blue */
+.process__rail {
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+.process__rail-fill {
+  background: linear-gradient(180deg, var(--pure-white), rgba(255, 255, 255, 0.7)) !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Stage cards on blue background */
+.step__num {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.step__icon {
+  background: var(--pure-white) !important;
+  color: var(--brand) !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18), 0 12px 30px rgba(0, 0, 0, 0.18) !important;
+}
+.step__icon::before,
+.step__icon::after {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+.step__title { color: var(--pure-white) !important; }
+.step__text { color: rgba(255, 255, 255, 0.85) !important; }
+
 /* Old-style buttons on About + Products pages — repaint to brand */
 .btn--primary {
   background: var(--brand) !important;
