@@ -19,12 +19,10 @@ Modern dark-themed multi-page website for Reyon Group, built with vanilla HTML, 
 ## Pages
 
 ```
-index.html         — Home with hero slider, video placeholder, products preview, blog teaser, CTA
+index.html         — Home with hero slider, video placeholder, products preview, stats, CTA
 about.html         — Story, mission/vision/promise, 3-stage process, locations
-products.html      — Detailed view of all four products (50CL, 75CL, 1.5L, 19L)
+products.html      — Detailed view of all five SKUs (35CL, 50CL, 75CL, 1.5L, 19L)
 contact.html       — Contact form, info chips, business hours, locations
-blog.html          — Blog listing with featured post + grid
-blog-*.html        — Three full-length sample blog posts (Wellness, Process, Guide)
 ```
 
 ## Structure
