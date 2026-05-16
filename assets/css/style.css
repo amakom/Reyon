@@ -5693,6 +5693,19 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
 .liquid-cursor {
   display: none !important;
 }
+/* Restore native cursors — the design originally hid the system cursor
+   on body/buttons/links because a custom follower was meant to replace it.
+   Now that the follower is gone, bring the real pointer back. */
+html, body { cursor: auto !important; }
+a, button, [role="button"], .btn, .btn-liquid, .nav__link, .nav__toggle,
+.hero__nav-btn, .hero__dot, .video__player, .video__play,
+.location__btn, .location__row, .footer__col a, .footer__social a,
+.contact__chip, .social-link, .back-to-top,
+[data-cursor="link"], [data-cursor="play"] {
+  cursor: pointer !important;
+}
+input, textarea, select { cursor: text !important; }
+select { cursor: pointer !important; }
 
 /* =========================================================
    ITALIC EM CLIPPING FIX
