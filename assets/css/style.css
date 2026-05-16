@@ -5686,6 +5686,15 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
 .product-detail__media--photo::before { display: none; }
 
 /* =========================================================
+   Kill the custom cursor followers — they read as a stray
+   floating dot and clutter a premium brand. Native cursor only.
+   ========================================================= */
+.cursor,
+.liquid-cursor {
+  display: none !important;
+}
+
+/* =========================================================
    ABOUT PREVIEW — image on the right column (home page)
    ========================================================= */
 .about-preview__media {
