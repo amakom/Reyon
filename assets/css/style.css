@@ -5695,6 +5695,37 @@ body .eyebrow__dot { background: var(--brand) !important; box-shadow: 0 0 0 4px 
 }
 
 /* =========================================================
+   ITALIC EM CLIPPING FIX
+   Every gradient-clipped italic em across the site (Zero, every,
+   premium, refined, etc.) was getting its last letter cut off on
+   the right because the italic slant pushes the glyph past the
+   text bounding box that `background-clip: text` uses.
+   Fix: give every italic em a tiny inline-block with padding-right
+   so the slanted final glyph has room to render in full.
+   ========================================================= */
+.section__title em,
+.page-hero__title em,
+.hero__title em,
+.cta-banner__title em,
+.cta-final__title em,
+.process-stage__title em,
+.benefit-card__title em,
+.benefit-card--lg .benefit-card__title em,
+.product-card__name em,
+.product-detail__name em,
+.video .section__title em,
+.process-flow .section__title em,
+.process .section__title em,
+.related .section__title em,
+.products-page .product-detail__name em,
+.why-bento .benefit-card--lg .benefit-card__title em {
+  display: inline-block !important;
+  padding-right: 0.12em !important;
+  /* Slight padding-bottom so descenders (y, p) aren't clipped either */
+  padding-bottom: 0.02em !important;
+}
+
+/* =========================================================
    ABOUT PREVIEW — image on the right column (home page)
    ========================================================= */
 .about-preview__media {
